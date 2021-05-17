@@ -1,12 +1,31 @@
 {
-  "name": "smax_mig_tool_auto",
+  "name": "@deepakandeli/smax_mig_tool_auto",
   "version": "1.0.0",
   "description": "Pupeteer script to automate deployment of ServiceMax migration from Source to Target org",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "directories": {
+    "lib": "lib"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "puppeteer": "^8.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "MigToolTest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepakandeli/SMAX_MIG_TOOL_AUTO.git"
+  },
+  "keywords": [
+    "ServiceMax",
+    "MigrationTool",
+    "Puppeteer"
+  ],
+  "author": "Deepak H Andeli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepakandeli/SMAX_MIG_TOOL_AUTO/issues"
+  },
+  "homepage": "https://github.com/deepakandeli/SMAX_MIG_TOOL_AUTO#readme"
 }
