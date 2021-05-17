@@ -1,4 +1,12 @@
-To Support our work <a href="https://www.buymeacoffee.com/Lifeonauto" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+<centre>
+<table>
+    <tr>
+        <td>To Support our work</td>
+        <td><a href="https://www.buymeacoffee.com/Lifeonauto" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a></td>
+    </tr>
+</table>
+</centre>
+
 
 ## How to get started with npm package
 1. Install package npm i smax_mig_tool_auto
