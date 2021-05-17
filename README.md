@@ -17,3 +17,8 @@
     https://github.com/deepakandeli/SMAX_MIG_TOOL_AUTO/blob/main/MigToolTest.js
 
 
+
+
+
+## Things to remember
+1. Make sure the Source and Target user do not have Two Factor or Multi Factor Authentication. Avoid MFA/TFA screen by introducing Login IP range on the User Profile

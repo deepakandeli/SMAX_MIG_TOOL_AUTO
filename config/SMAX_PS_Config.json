@@ -1,7 +1,7 @@
 {
     "source":{
         "Type":"sandbox",
-        "Username":"deepak.andeli@sysmex.dev06",
+        "Username":"deepak.andeli@servicemax.com.hts.dev06",
         "Password":""
     },
     "target":{
@@ -15,7 +15,7 @@
         "URL":"https://migrate.servicemax.com/MigrationTool/"
     },
     "MiscSetting":{
-        "SPM_MODAL":"TRUE",
+        "SPM_MODAL":"FALSE",
         "OVERWRITE":"FALSE",
         "HEADLESS":"FALSE"
     }

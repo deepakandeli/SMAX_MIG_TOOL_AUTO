@@ -1,14 +1,23 @@
 const puppeteer = require('puppeteer');
-var tools = require('./lib/SMAX_PS_Tools.js');
-var srcOrg = require('./lib/SMAX_PS_Src_Org.js');
-var targOrg = require('./lib/SMAX_PS_Targ_Org.js');
+var tools = require('../lib/SMAX_PS_Tools.js');
+var srcOrg = require('../lib/SMAX_PS_Src_Org.js');
+var targOrg = require('../lib/SMAX_PS_Targ_Org.js');
 var config;
 var browser;
 
-async function main(configPath){
+async function initCurry(f){
+  return function(a) {
+    return function(b) {
+      return function(c) {
+        return f(a,b,c);
+      }      
+    };
+  };
+}
+
+async function main(){
   //Init Config  
-    //var configJSON = tools.initConfig('./config/SMAX_PS_Config.json');
-    var configJSON = tools.initConfig(configPath);
+    var configJSON = tools.initConfig('../config/SMAX_PS_Config.json');
     config= JSON.parse(configJSON);
     const width=1024, height=1600;
     browser = await puppeteer.launch({
@@ -31,13 +40,15 @@ async function initiateMigration(browser,config,curComp){
   const url = config.migration.URL;    
   await page.goto(url);
   const migPagePromise = page.waitForNavigation({waitUntil: "domcontentloaded"});
+
+  var isSPMAlertExists = config.MiscSetting.SPM_MODAL;
+  console.log('isSPMAlertExists '+isSPMAlertExists);
   
   await Promise.all([
     srcOrg.setupSrcOrg(browser,page,config)
   ]);
   
 
-  var isSPMAlertExists = config.MiscSetting.SPM_MODAL;
   if(isSPMAlertExists=='TRUE'){
     //Ok Button
     await tools.modalOK(page,'#okbtn');
@@ -91,8 +102,4 @@ async function initiateMigration(browser,config,curComp){
 }
 
 
-//main();
-
-module.exports = {
-  main
-};
+main();
