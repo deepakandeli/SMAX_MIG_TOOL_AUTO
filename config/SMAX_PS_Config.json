@@ -1,0 +1,22 @@
+{
+    "source":{
+        "Type":"sandbox",
+        "Username":"deepak.andeli@sysmex.dev06",
+        "Password":""
+    },
+    "target":{
+        "Type":"production",
+        "Username":"deepak.andeli@901trial.com",
+        "Password":""
+    },
+    "migration":{
+        "components":[["SFM1601203770307035e2dc891d74128ec32ba984c4ec6fe"]                        
+        ],
+        "URL":"https://migrate.servicemax.com/MigrationTool/"
+    },
+    "MiscSetting":{
+        "SPM_MODAL":"TRUE",
+        "OVERWRITE":"FALSE",
+        "HEADLESS":"FALSE"
+    }
+}
