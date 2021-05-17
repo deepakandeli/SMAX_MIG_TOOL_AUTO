@@ -66,9 +66,21 @@ async function initiateMigration(browser,config,curComp){
   //Expand All Tree
   await tools.expandTree(page,pageFrame);
 
+  if(curComp.length<1){
+    throw 'No component found in the config file';
+  }
   await tools.selectElement(page,curComp);
 
   const postSelection = page.mainFrame();
+
+  let seletedTar = await postSelection.evaluate(() => {
+    let el = document.querySelector("ul.myList > ul")
+    return el ? el.innerText : ""
+  })
+  if(seletedTar==''){
+    throw 'No component selected for migration';
+  }
+
   const validateButton = await postSelection.$('input[value=\'Validate\']');
   await validateButton.click();
 
@@ -99,12 +111,18 @@ async function initiateMigration(browser,config,curComp){
   await migrateButton.evaluate((e) => e.click());
   console.log('After  migrateButton Click');
 
+  //#msgBox1[style*="visibility: visible"]
+  let deployMessage = await postSelection.evaluate(() => {
+    let el = document.querySelector("#msgBox1[style*=\"visibility: visible\"]>#content");
+    return el ? el.innerText : ""
+  })
+  if(deployMessage=='None of the selected configuration items qualify for migration.'){
+    throw 'No component selected for deployment';
+  } 
+
   await page.screenshot({ path: 'example.png' });
   return ;  
 }
-
-
-//main();
 
 module.exports = {
   main
