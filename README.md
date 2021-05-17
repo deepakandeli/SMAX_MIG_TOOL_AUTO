@@ -1,0 +1,1 @@
+# SMAX_MIG_TOOL_AUTO
