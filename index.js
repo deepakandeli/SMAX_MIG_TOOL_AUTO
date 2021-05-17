@@ -10,18 +10,30 @@ async function main(configPath){
     //var configJSON = tools.initConfig('./config/SMAX_PS_Config.json');
     var configJSON = tools.initConfig(configPath);
     config= JSON.parse(configJSON);
+    const headLess = config.MiscSetting.HEADLESS;
+    var headLessBool=false;
+    if(headLess=='TRUE'){
+        headLessBool=true;
+    }
     const width=1024, height=1600;
     browser = await puppeteer.launch({
-      headless: false,
+      headless: headLessBool,
       defaultViewport: null
     }); 
 
     const listOfComp = config.migration.components;
-    for (let index = 0; index < listOfComp.length; index++) {
-      const curComp = listOfComp[index]
-      await initiateMigration(browser,config,curComp);
+    try{
+        for (let index = 0; index < listOfComp.length; index++) {
+            const curComp = listOfComp[index]
+            await initiateMigration(browser,config,curComp);
+          }
+    }catch(err){
+        console.log(err);
     }
-    await browser.close();
+
+    finally{
+        await browser.close();
+    }    
 }
 
 
@@ -33,12 +45,11 @@ async function initiateMigration(browser,config,curComp){
   const migPagePromise = page.waitForNavigation({waitUntil: "domcontentloaded"});
 
   var isSPMAlertExists = config.MiscSetting.SPM_MODAL;
-  console.log('isSPMAlertExists '+isSPMAlertExists);
-   
+
+  var status='';
   await Promise.all([
-    srcOrg.setupSrcOrg(browser,page,config)
+    status=srcOrg.setupSrcOrg(browser,page,config)
   ]);
-  
 
   if(isSPMAlertExists=='TRUE'){
     //Ok Button
