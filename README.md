@@ -7,4 +7,4 @@ Mention the Org Type, Username and Password for Source and Target Org
 Refer to the test class to understand how to use the package and run the same.
 https://github.com/deepakandeli/SMAX_MIG_TOOL_AUTO/blob/main/MigToolTest.js
 
-<a href="https://www.buymeacoffee.com/Lifeonauto" target="_blank"><img src="https://gph.is/st/Y6qdpGM" alt="Buy Me A Coffee" height="41" width="174"></a>
+<a href="https://www.buymeacoffee.com/Lifeonauto" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
