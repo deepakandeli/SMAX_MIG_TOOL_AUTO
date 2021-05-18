@@ -8,14 +8,15 @@
 </centre>
 
 
-## How to get started with npm package
-1. Install package npm i smax_mig_tool_auto
-2. Create a config file with the source and target details
-    
-Example Config file
-===============
-SMAX_PS_Config.json
-----
+# How to get started with this npm package
+## Install package 
+```bash
+npm i smax_mig_tool_auto
+```
+## Create a config file with the source and target details
+
+### Example Config file
+#### SMAX_PS_Config.json
 ```json
 {
     "source":{
@@ -43,22 +44,19 @@ SMAX_PS_Config.json
 
 That was my JSON code block.
     Mention the Org Type, Username and Password for Source and Target Org
-3. Create a Javascript program that includes the package and invoke the Main function as shown in the below example
+## Create a Javascript program that includes the package and invoke the Main function as shown in the below example
 
-Package Usage - Example 
-===============
-
-MigToolTest.js
-----
+### Package Usage - Example 
+#### MigToolTest.js
 ```js
 const smax_migtool = require('smax_mig_tool_auto');
 console.log(process.argv.slice(2));
 smax_migtool.main(process.argv.slice(2)[0]);
 ```
-4. Start the migration process using the below command
+## Start the migration process using the below command
 ```bash
 node MigToolTest.js "./SMAX_PS_Config.json"
 ```
 
-## Things to remember
+# Things to remember
 1. Make sure the Source and Target user do not have Two Factor or Multi Factor Authentication. Avoid MFA/TFA screen by introducing Login IP range on the User Profile
