@@ -41,10 +41,17 @@ Example Config file
 
 That was my JSON code block.
     Mention the Org Type, Username and Password for Source and Target Org
-3. Refer to the test class to understand how to use the package and run the same.
-    https://github.com/deepakandeli/SMAX_MIG_TOOL_AUTO/blob/main/MigToolTest.js
+3. Create a Javascript program that includes the package and invoke the Main function as shown in the below example
 
-
+Package Usage - Example MigToolTest.js
+===============
+```js
+const smax_migtool = require('smax_mig_tool_auto');
+console.log(process.argv.slice(2));
+smax_migtool.main(process.argv.slice(2)[0]);
+```
+4. Refer to the test class to understand how to use the package and run the same.
+node MigToolTest.js "./config/SMAX_PS_Config.json"
 
 
 
