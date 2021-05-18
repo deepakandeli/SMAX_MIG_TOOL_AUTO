@@ -14,17 +14,19 @@
     
 Example Config file
 ===============
+SMAX_PS_Config.json
+----
 ```json
 {
     "source":{
         "Type":"sandbox",
-        "Username":"deepak.andeli@servicemax.com.hts.dev06",
-        "Password":"12345"
+        "Username":"Source_Username",
+        "Password":"Source_Password"
     },
     "target":{
         "Type":"production",
-        "Username":"deepak.andeli@901trial.com",
-        "Password":"12345"
+        "Username":"Target_Username",
+        "Password":"Target_Password"
     },
     "migration":{
         "components":[["SFM Wizards","test"]                        
@@ -43,17 +45,20 @@ That was my JSON code block.
     Mention the Org Type, Username and Password for Source and Target Org
 3. Create a Javascript program that includes the package and invoke the Main function as shown in the below example
 
-Package Usage - Example MigToolTest.js
+Package Usage - Example 
 ===============
+
+MigToolTest.js
+----
 ```js
 const smax_migtool = require('smax_mig_tool_auto');
 console.log(process.argv.slice(2));
 smax_migtool.main(process.argv.slice(2)[0]);
 ```
-4. Refer to the test class to understand how to use the package and run the same.
-node MigToolTest.js "./config/SMAX_PS_Config.json"
-
-
+4. Start the migration process using the below command
+```bash
+node MigToolTest.js "./SMAX_PS_Config.json"
+```
 
 ## Things to remember
 1. Make sure the Source and Target user do not have Two Factor or Multi Factor Authentication. Avoid MFA/TFA screen by introducing Login IP range on the User Profile
