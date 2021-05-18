@@ -19,12 +19,12 @@ Example Config file
     "source":{
         "Type":"sandbox",
         "Username":"deepak.andeli@servicemax.com.hts.dev06",
-        "Password":"Melbourne@12345"
+        "Password":"12345"
     },
     "target":{
         "Type":"production",
         "Username":"deepak.andeli@901trial.com",
-        "Password":"Melbourne@12345"
+        "Password":"12345"
     },
     "migration":{
         "components":[["SFM Wizards","test"]                        
@@ -34,7 +34,7 @@ Example Config file
     "MiscSetting":{
         "SPM_MODAL":"FALSE",
         "OVERWRITE":"FALSE",
-        "HEADLESS":"FALSE"
+        "HEADLESS":"TRUE"
     }
 }
 ```
