@@ -9,12 +9,11 @@
 
 
 # How to get started with this npm package
-## Install package 
+## 1. Install package 
 ```bash
 npm i smax_mig_tool_auto
 ```
-## Create a config file with the source and target details
-
+## 2. Create a config file with the source and target details
 ### Example Config file
 #### SMAX_PS_Config.json
 ```json
@@ -44,7 +43,7 @@ npm i smax_mig_tool_auto
 
 That was my JSON code block.
     Mention the Org Type, Username and Password for Source and Target Org
-## Create a Javascript program that includes the package and invoke the Main function as shown in the below example
+## 3. Create a Javascript program that includes the package and invoke the Main function as shown in the below example
 
 ### Package Usage - Example 
 #### MigToolTest.js
@@ -53,7 +52,7 @@ const smax_migtool = require('smax_mig_tool_auto');
 console.log(process.argv.slice(2));
 smax_migtool.main(process.argv.slice(2)[0]);
 ```
-## Start the migration process using the below command
+## 4. Start the migration process using the below command
 ```bash
 node MigToolTest.js "./SMAX_PS_Config.json"
 ```
