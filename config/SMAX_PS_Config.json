@@ -10,13 +10,18 @@
         "Password":"12345"
     },
     "migration":{
-        "components":[["SFM Wizards","test"]                        
+        "components":[["Default Group Profile","SMAX_PS_Admin","SMAX_PS_ServiceMax Business Admin","SMAX_PS_ServiceMax Partners","SMAX_PS_ServiceMax User"],
+            ["test"]                        
         ],
         "URL":"https://migrate.servicemax.com/MigrationTool/"
     },
     "MiscSetting":{
+        "CHECKONLY":"FALSE",
         "SPM_MODAL":"FALSE",
-        "OVERWRITE":"FALSE",
-        "HEADLESS":"TRUE"
+        "OVERWRITE":"TRUE",
+        "HEADLESS":"FALSE",
+        "TIMEOUTS":{
+            "VALIDATE":600000
+        }
     }
 }
