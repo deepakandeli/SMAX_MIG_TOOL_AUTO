@@ -28,7 +28,6 @@ async function main(configPath){
       headLessBool=false
     }
     
-    const width=1024, height=1600;
     browser = await puppeteer.launch({
       headless: headLessBool,
       defaultViewport: null
@@ -48,12 +47,16 @@ async function multipleCompCallBack(err, res){
   console.log(res);
   if(res.done && res.totalSize == 0){
     currIndex=currIndex+1;
+    console.log('listOfComp.length '+listOfComp.length+' currIndex '+currIndex);
     if(listOfComp.length>currIndex){
       var curComp=listOfComp[currIndex];
-      console.log('curComp '+curComp);  
       await initiateMigration(browser,config,curComp);
-      await tools.delay(120000);
-      await sfUtil.waitForMigComp(config.target.Username,config.target.Password,multipleCompCallBack);
+      if(listOfComp.length==currIndex+1){
+        await browser.close();
+      }else{
+        await tools.delay(120000);
+        await sfUtil.waitForMigComp(config.target.Username,config.target.Password,multipleCompCallBack);
+      }
     }else{
       await browser.close();
     }
