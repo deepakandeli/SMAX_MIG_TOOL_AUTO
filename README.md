@@ -29,7 +29,7 @@ npm i smax_mig_tool_auto
         "Password":"Target_Password"
     },
     "migration":{
-        "components":[["SFM Wizards","test"]                        
+        "components":[["test"]                        
         ],
         "URL":"https://migrate.servicemax.com/MigrationTool/"
     },
@@ -40,9 +40,9 @@ npm i smax_mig_tool_auto
     }
 }
 ```
-
-That was my JSON code block.
-    Mention the Org Type, Username and Password for Source and Target Org
+Mention the Org Type, Username and Password for Source and Target Org
+Also mention the components that needs to be migrated. 
+At the moment this feature only supports smaller volume of migration, so please do not include entire folders such as SFM Wizard, SFM Search etc
 ## 3. Create a Javascript program that includes the package and invoke the Main function as shown in the below example
 
 ### Package Usage - Example 
@@ -59,3 +59,5 @@ node MigToolTest.js "./SMAX_PS_Config.json"
 
 # Things to remember
 1. Make sure the Source and Target user do not have Two Factor or Multi Factor Authentication. Avoid MFA/TFA screen by introducing Login IP range on the User Profile
+2. Currently does not support ServiceMax Profile migration
+3. Use the Checkonly setting as TRUE to only validate the components between the 2 orgs and it will not be Headless process
