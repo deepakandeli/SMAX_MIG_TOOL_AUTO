@@ -10,6 +10,8 @@ var browser;
 var noOfIterations=0;
 var currIndex=0;
 var listOfComp; 
+var tarLoginURL;
+var checkOnly;
 async function main(configPath){
   //Init Config  
     //var configJSON = tools.initConfig('./config/SMAX_PS_Config.json');
@@ -23,7 +25,7 @@ async function main(configPath){
     }
 
     //If Checkonly is TRUE then it should be Headless
-    var checkOnly = config.MiscSetting.CHECKONLY;
+    checkOnly = config.MiscSetting.CHECKONLY;
     if(checkOnly=='TRUE'){
       headLessBool=false
     }
@@ -33,12 +35,23 @@ async function main(configPath){
       defaultViewport: null
     }); 
 
+    
+    //Login URL
+    tarLoginURL='https://login.salesforce.com';
+    if(config.target.Type=='sandbox'){
+      tarLoginURL='https://test.salesforce.com';
+    }
+
     try{
       const curComp = listOfComp[currIndex];
       await initiateMigration(browser,config,curComp);
-      await sfUtil.waitForMigComp(config.target.Username,config.target.Password,multipleCompCallBack);
+      if(checkOnly!='TRUE'){
+        await tools.delay(120000);
+        await sfUtil.waitForMigComp(tarLoginURL,config.target.Username,config.target.Password,multipleCompCallBack);
+      }      
     }catch(err){
         console.log(err);
+        await browser.close();
     } 
 }
 
@@ -48,22 +61,24 @@ async function multipleCompCallBack(err, res){
   if(res.done && res.totalSize == 0){
     currIndex=currIndex+1;
     console.log('listOfComp.length '+listOfComp.length+' currIndex '+currIndex);
-    if(listOfComp.length>currIndex){
-      var curComp=listOfComp[currIndex];
-      await initiateMigration(browser,config,curComp);
-      if(listOfComp.length==currIndex+1){
-        await browser.close();
+    if(checkOnly!='TRUE'){
+      if(listOfComp.length>currIndex){
+        var curComp=listOfComp[currIndex];
+        await initiateMigration(browser,config,curComp);
+          if(listOfComp.length==currIndex+1){
+            await browser.close();
+          }else{
+            await tools.delay(120000);
+            await sfUtil.waitForMigComp(tarLoginURL,config.target.Username,config.target.Password,multipleCompCallBack);
+          }
       }else{
-        await tools.delay(120000);
-        await sfUtil.waitForMigComp(config.target.Username,config.target.Password,multipleCompCallBack);
+        await browser.close();
       }
-    }else{
-      await browser.close();
     }
   }else{
       console.log('Job still running');
       await tools.delay(120000);
-      await sfUtil.waitForMigComp(config.target.Username,config.target.Password,multipleCompCallBack);
+      await sfUtil.waitForMigComp(tarLoginURL,config.target.Username,config.target.Password,multipleCompCallBack);
   }  
 }
 
@@ -160,9 +175,9 @@ async function initiateMigration(browser,config,curComp){
     if(deployMessage=='None of the selected configuration items qualify for migration.'){
       throw 'No component selected for deployment';
     } 
+    await page.screenshot({ path: 'example.png' });
+    await context.close();
   }
-  await page.screenshot({ path: 'example.png' });
-  await context.close();
   return ;  
 }
 
