@@ -86,6 +86,8 @@ async function multipleCompCallBack(err, res){
 async function initiateMigration(browser,config,curComp){
   const context = await browser.createIncognitoBrowserContext();
   const page = await context.newPage();
+  page.on('console', (log) => console[log._type](log._text));
+
   const url = config.migration.URL;    
   await page.goto(url);
   const migPagePromise = page.waitForNavigation({waitUntil: "domcontentloaded"});
@@ -130,7 +132,7 @@ async function initiateMigration(browser,config,curComp){
   const validateButton = await postSelection.$('input[value=\'Validate\']');
   await validateButton.click();
 
-  console.log('Before Wait Response Validate');
+  //console.log('Before Wait Response Validate');
   let validateTimeout = config.MiscSetting.TIMEOUTS.VALIDATE;
 
   try{
@@ -142,30 +144,67 @@ async function initiateMigration(browser,config,curComp){
     throw 'Validation request failed '+err;
   }
 
-  console.log('After  Wait Response Validate');
+  //console.log('After  Wait Response Validate');
 
   var checkOnly = config.MiscSetting.CHECKONLY;
   if(checkOnly!='TRUE'){
     await tools.delay(10000);
-    console.log('After  Delay');
+    //console.log('After  Delay');
     const deploySelection = page;
     await deploySelection.$('#validateUI[style*="visibility: visible"]',{timeout: 120000});
-    console.log('After  deploySelection');
+    //console.log('After  deploySelection');
   
     var toOverwrite = config.MiscSetting.OVERWRITE;
     if(toOverwrite=='TRUE'){
       //Over write
       const selectAllOverwrite = await deploySelection.$('#selectAll',{timeout: 120000});
-      console.log('After  selectAllOverwrite');
+      //console.log('After  selectAllOverwrite');
       await selectAllOverwrite.evaluate((e) => e.click());  
-      console.log('After  selectAllOverwrite Click');
-    } 
+      //console.log('After  selectAllOverwrite Click');
+
+      //profileSelectAllContainer
+      const selectAllCProfile = await deploySelection.$('#profileSelectAllContainer > input',{timeout: 120000});
+      if(selectAllCProfile!=null){
+        await selectAllCProfile.evaluate((e) => e.click());
+        //console.log('After  selectAllCProfile Click');
+      }
+
+      //tr.whiteBg
+      
+      //let validComps='tr.whiteBg > td';
+      let validComps='tr.whiteBg';
+      const validationFrame = page.mainFrame();
+      console.log('Validation Result - Start');
+       await validationFrame.evaluate(({validComps}) => {
+        let anchorList = document.querySelectorAll(validComps);
+        var arrayLength = anchorList.length;
+        for(var i = 0; i < arrayLength; i++){
+          let curChildNode=anchorList[i].childNodes;
+          debugger;
+          var curCompStatusStr='';
+          for(var j = 0; j < curChildNode.length; j++){
+            let curNodeName = curChildNode[j].nodeName;
+            if(curNodeName==='TD'){
+              let curNodeStyle = curChildNode[j].getAttribute('style');
+              let curNodeId = curChildNode[j].getAttribute('Id');
+              if(curNodeStyle==='width:82%'){
+                curCompStatusStr+=curChildNode[j].innerText;
+              }else if(curNodeId==='migrateData'){
+                curCompStatusStr+=' : '+curChildNode[j].innerText;
+              }
+            }
+          }   
+          console.log(curCompStatusStr);       
+        }
+      },{validComps});
+      console.log('Validation Result - End ');
+    }
     
       
     const migrateButton = await deploySelection.waitForSelector('#deployData',{timeout: 120000});
-    console.log('After  migrateButton');
+    //console.log('After  migrateButton');
     await migrateButton.evaluate((e) => e.click());
-    console.log('After  migrateButton Click');
+    //console.log('After  migrateButton Click');
   
     //#msgBox1[style*="visibility: visible"]
     let deployMessage = await postSelection.evaluate(() => {
