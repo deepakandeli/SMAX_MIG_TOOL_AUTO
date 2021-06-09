@@ -168,9 +168,24 @@ async function initiateMigration(browser,config,curComp){
         await selectAllCProfile.evaluate((e) => e.click());
         //console.log('After  selectAllCProfile Click');
       }
-
-      //tr.whiteBg
       
+      //div.dependentList > div > input.profile-checkbox
+      let profileSel= 'div.dependentList > div > input.profile-checkbox';
+      const profileSelFrame = page.mainFrame();
+      console.log('Profile Selection - Start');
+      debugger;
+      //Select all Salesforce profile(s)
+      await profileSelFrame.evaluate(({profileSel}) => {
+        let profileSelNodes = document.querySelectorAll(profileSel);
+        var arrayLength = profileSelNodes.length;
+        for(var i = 0; i < arrayLength; i++){
+          if(profileSelNodes[i].innerText==='Select all Salesforce profile(s)'){
+            profileSelNodes[i].click();
+          }
+        }
+      },{profileSel});
+      console.log('Profile Selection - End');
+
       //let validComps='tr.whiteBg > td';
       let validComps='tr.whiteBg';
       const validationFrame = page.mainFrame();
@@ -181,7 +196,7 @@ async function initiateMigration(browser,config,curComp){
         for(var i = 0; i < arrayLength; i++){
           let curChildNode=anchorList[i].childNodes;
           debugger;
-          var curCompStatusStr='';
+          var curCompStatusStr='-----> ';
           for(var j = 0; j < curChildNode.length; j++){
             let curNodeName = curChildNode[j].nodeName;
             if(curNodeName==='TD'){

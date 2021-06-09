@@ -54,10 +54,16 @@ smax_migtool.main(process.argv.slice(2)[0]);
 ```
 ## 4. Start the migration process using the below command
 ```bash
-node MigToolTest.js "./SMAX_PS_Config.json"
+node MigToolTest.js "./SMAX_PS_Config.json"  > log.txt
 ```
 
 # Things to remember
 1. Make sure the Source and Target user do not have Two Factor or Multi Factor Authentication. Avoid MFA/TFA screen by introducing Login IP range on the User Profile
 2. Currently does not support ServiceMax Profile migration
 3. Use the Checkonly setting as TRUE to only validate the components between the 2 orgs and it will not be Headless process
+4. If Checkonly is TRUE, only the first index in the array of component will be processed.
+
+
+
+# Release Log
+1.8 Logging the validation results to a log file and Seletion of Profile from the validation screen.
