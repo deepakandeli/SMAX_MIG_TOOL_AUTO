@@ -54,7 +54,7 @@ smax_migtool.main(process.argv.slice(2)[0]);
 ```
 ## 4. Start the migration process using the below command
 ```bash
-node MigToolTest.js "./SMAX_PS_Config.json"  > log.txt
+node MigToolTest.js "config/SMAX_PS_Config.json" |tee log.txt
 ```
 
 # Things to remember
@@ -67,3 +67,5 @@ node MigToolTest.js "./SMAX_PS_Config.json"  > log.txt
 
 # Release Log
 1.8 Logging the validation results to a log file and Seletion of Profile from the validation screen.
+1.9 Fixes related to Logging SFM dependent list post validation
+1.10 Fixes related to expanding the validation screen

@@ -51,7 +51,7 @@ async function main(configPath){
       }      
     }catch(err){
         console.log(err);
-        await browser.close();
+        await browser.close();//HAL
     } 
 }
 
@@ -66,13 +66,13 @@ async function multipleCompCallBack(err, res){
         var curComp=listOfComp[currIndex];
         await initiateMigration(browser,config,curComp);
           if(listOfComp.length==currIndex+1){
-            await browser.close();
+            await browser.close();//HAL
           }else{
             await tools.delay(120000);
             await sfUtil.waitForMigComp(tarLoginURL,config.target.Username,config.target.Password,multipleCompCallBack);
           }
       }else{
-        await browser.close();
+        await browser.close();//HAL
       }
     }
   }else{
@@ -186,6 +186,18 @@ async function initiateMigration(browser,config,curComp){
       },{profileSel});
       console.log('Profile Selection - End');
 
+      //Expand validation result tree
+      let validTree='tr.whiteBg>td[style="width:82%"]>a';
+      const validTreeFrame = page;
+      await validTreeFrame.evaluate(({validTree}) => {
+        let anchorList = document.querySelectorAll(validTree);
+        var arrayLength = anchorList.length;
+        for(var i = 0; i < arrayLength; i++){
+          anchorList[i].click();
+        }
+      },{validTree});
+      debugger;
+      
       //let validComps='tr.whiteBg > td';
       let validComps='tr.whiteBg';
       const validationFrame = page.mainFrame();
@@ -196,7 +208,7 @@ async function initiateMigration(browser,config,curComp){
         for(var i = 0; i < arrayLength; i++){
           let curChildNode=anchorList[i].childNodes;
           debugger;
-          var curCompStatusStr='-----> ';
+          var curCompStatusStr='';
           for(var j = 0; j < curChildNode.length; j++){
             let curNodeName = curChildNode[j].nodeName;
             if(curNodeName==='TD'){
@@ -204,12 +216,14 @@ async function initiateMigration(browser,config,curComp){
               let curNodeId = curChildNode[j].getAttribute('Id');
               if(curNodeStyle==='width:82%'){
                 curCompStatusStr+=curChildNode[j].innerText;
-              }else if(curNodeId==='migrateData'){
+              }else if(curNodeId==='migrateData' || curNodeId==='blockData'){
                 curCompStatusStr+=' : '+curChildNode[j].innerText;
               }
             }
-          }   
-          console.log(curCompStatusStr);       
+          }
+          if(curCompStatusStr!=''){
+            console.log('-----> '+curCompStatusStr);
+          }          
         }
       },{validComps});
       console.log('Validation Result - End ');
@@ -218,7 +232,7 @@ async function initiateMigration(browser,config,curComp){
       
     const migrateButton = await deploySelection.waitForSelector('#deployData',{timeout: 120000});
     //console.log('After  migrateButton');
-    await migrateButton.evaluate((e) => e.click());
+    await migrateButton.evaluate((e) => e.click());//HAL
     //console.log('After  migrateButton Click');
   
     //#msgBox1[style*="visibility: visible"]
@@ -230,7 +244,7 @@ async function initiateMigration(browser,config,curComp){
       throw 'No component selected for deployment';
     } 
     await page.screenshot({ path: 'example.png' });
-    await context.close();
+    await context.close();//HAL
   }
   return ;  
 }
