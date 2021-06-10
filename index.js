@@ -44,6 +44,7 @@ async function main(configPath){
 
     try{
       const curComp = listOfComp[currIndex];
+      console.log('*** Start processing components from Index '+currIndex);
       await initiateMigration(browser,config,curComp);
       if(checkOnly!='TRUE'){
         await tools.delay(120000);
@@ -241,7 +242,8 @@ async function initiateMigration(browser,config,curComp){
       return el ? el.innerText : ""
     })
     if(deployMessage=='None of the selected configuration items qualify for migration.'){
-      throw 'No component selected for deployment';
+      //throw 'No component selected for deployment';
+      console.log('No component selected for deployment');
     } 
     await page.screenshot({ path: 'example.png' });
     await context.close();//HAL

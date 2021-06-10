@@ -69,3 +69,4 @@ node MigToolTest.js "config/SMAX_PS_Config.json" |tee log.txt
 1.8 Logging the validation results to a log file and Seletion of Profile from the validation screen.
 1.9 Fixes related to Logging SFM dependent list post validation
 1.10 Fixes related to expanding the validation screen
+1.11 Fixes the "No component selected for deployment" scenario
