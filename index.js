@@ -44,7 +44,6 @@ async function main(configPath){
 
     try{
       const curComp = listOfComp[currIndex];
-      console.log('*** Start processing components from Index '+currIndex);
       await initiateMigration(browser,config,curComp);
       if(checkOnly!='TRUE'){
         await tools.delay(120000);
@@ -85,6 +84,7 @@ async function multipleCompCallBack(err, res){
 
 
 async function initiateMigration(browser,config,curComp){
+  console.log('\n*** Start processing components from Index '+currIndex);
   const context = await browser.createIncognitoBrowserContext();
   const page = await context.newPage();
   page.on('console', (log) => console[log._type](log._text));
