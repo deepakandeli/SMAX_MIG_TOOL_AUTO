@@ -2,47 +2,24 @@
     "source":{
         "Type":"sandbox",
         "Username":"deepak.andeli@servicemax.com.hts.dev06",
-        "Password":"Melbourne@12345"
+        "Password":"Scope@12345"
     },
     "target":{
-        "Type":"sandbox",
-        "Username":"ps.admin@smax.com.fsb",
+        "Type":"production",
+        "Username":"deepak.andeli@901trial.com",
         "Password":"Melbourne@12345"
     },
     "migration":{
         "components":[
-            ["SMAX_PS_Account_Toolbox", "SMAX_PS_CC_Toolbox", "SMAX_PS_Contact_Management", "SMAX_PS_Equipment_Management"],
-            ["SMAX_PS_Installed_Product_Toolbox_Tech_Top Level", "SMAX_PS_Installed_Product_Toolbox_Top Level", "SMAX_PS_Location Management_Child", "SMAX_PS_Location Management_Parent"],
-            ["SMAX_PS_Manage Expertise", "SMAX_PS_Manage Service Quotes", "SMAX_PS_Manage skills", "SMAX_PS_Manage_Account", "SMAX_PS_Manage_Case_line"],
-            ["SMAX_PS_Manage_CC_Case", "SMAX_PS_Manage_Opp_Case", "SMAX_PS_Manage_Service_Quote_IP_Lines"],
-            ["SMAX_PS_Manage_Task_Template", "SMAX_PS_Opp_Toolbox", "SMAX_PS_Product_Management", "SMAX_PS_Service Quote Toolbox"],
-            ["SMAX_PS_Territory＿Manage", "SMAX_PS_Warranty_Terms"],
-            ["SFM1615031871327f4bc5f439254eb24793e7ad2d1c12965", "SFM161518416652375d7c0d50b9c639db9080c01156e5863", "SFM16153115609295e6bee38f4f2d4c7c4b4812a7679b21f", "SFM161543606933858cd30b65f4758d2f84ed4d08d8af69c", "SFM16154383789871558f4a78a3fc02a26b4f6d8d81412ab"],
-            ["SFM161544001734952b8a032b20ea5687e744ea0c82ec560", "SFM1615881699259c7e0d501bf980e8be0cc0f5da32919a2", "SFM161612782056481fbe08c6bb074b7c07aa0f83ccbb3f5", "SFM161639563567364ef99b598230be80ad03eef13bbf22e"],
-            ["SFM1616946407351d43eb695a2537d2381a9777ab2c12bd4", "SFM1616991937910771de39bdd008b55704a86093ee14ac3", "SFM16169969670058378eb50d0a1e5ac7791dd7ffb44f44e", "SFM16171018090589a8899005a56bc658ce4ef95437100ad"],
-            [ "SFM161726515366555821e2ab01d0c68cb9a53f08a219b74", "SFM1617269903455d27b4ae987f6ded98e20f0716520dd3c", "SFM1617592306372b214008b9dc44a28b5adbb0d7140fc0a", "SFM161759631347793cd667f50b847fe82dec62bf45e720b" ],
-            ["SFM1617612846719e95e35dfa33a012dad37921eec9f5a1f", "SFM16176147659268d9fc5e57a163127b217f771c6369f62", "SFM1617774578371363fed8bbc4a2f805bd44f12aba36a31", "SFM161788564792371fded211b65a9a165726ad0744ecd97", "SFM16178863207053a749b470feb23ea694f1c6e54d682a8"],
-            ["SFM1617886932922275f3201e81cc6c9eefe0a377831cab1", "SFM1617887530446e3fb7a82e4d677c2927218aa4fee856d", "SFM16179319224441c40becdbfc2272b54da393f9fc437bc", "SFM161793217138589463b4b0b429c41d603708ba5715bde", "SFM16179605636631957b09241f1be1493dca37a09bfd25b", "SFM1617963080023c96660c4c897e00437339938a583b7d3"],
-            ["SFM161819743022979ae7b0390273b4c35121575865dc80b", "SFM1618217021229e5e0aef08f423e98907529372684750e", "SFM1618321456937cc4fdf9141403f27dd5ecabaa42ebf7f", "SFM1618332793830b6d5ed490b98b8f0a8a4d1eb9ffde29e", "SFM1618379738045072e50b4db31921e990dc2ce6f8722cc"],
-            ["SFM16184659867555cece4b4e33ef01e3a10fe04b3c64257", "SFM1618482789207ee87fe36053d29043bd3b9d7b1d73b95", "SFM16185633240070b521ed71d9fa8e27a43d8adb456cdb3", "SFM161856417458860d97180c7670ffe562a943eae97134f", "SFM16185646697712ba0483083acea0ee55f800ec84d6198", "SFM16188075448015dc480f9ec69d41c02e1c89fd3b24c86"],
-            ["SFM16189855658772761472992f90c3750fa74cb0c2330f5", "SFM16190699509659b465a0102da5a1992c27da0050316fe", "SFM1619105045662080f9864e7a8ab4e84127f85584113f3", "SFM16194145719537234f0420eb584ff0b2dfd7cecf7540d", "SFM16196072092015125bb1cdf8a1021b771e722acee0e59"],
-            [ "SFM161960753765180bc62c374b5ea24650d39aad97bc769", "SFM1621826237966a0edbf91dd95ff0796548f34e95e922e"],
-            ["ケースを検索","取引責任者検索","設置/インストール済み製品検索"],
-            ["場所の検索","取引先検索","商品の検索","サービス見積を検索","技術者/機器を検索"],
-            ["SFM1614765831416757db015f16bedef315fb3e0791659a0", "SFM16147667971259bf1cfec6e5946e53475496c8e2043cb", "SFM16147675634953ed5d688a61f00e38b3343446bbf8d98", "SFM16148550392580b687d97c19b2eb1219eca5726b8e4b4", "SFM16148556737821772ff6ec847efcd94e1c70713f63039"],
-            ["SFM16148560753479cbb4daba7aae33a841314d4e149e3e5", "SFM1614858243751641583dd7015b8fde83c0d92164fe7de", "SFM1614865683189932c34de1dc7c7f81d09ecfbd39a45aa", "SFM161486756441736c4b4e770953c26c128da2d35923382"],
-            ["SFM16148688209302c4c1c686e1ef7e02c8f5f719270d0df", "SFM1614870221668357a828b9e98522bbf42214f24f36f2c", "SFM1614923463283c8c6d2c21dfe57c45b14940f4bf97c3a", "SFM16149247123062d3b0fefbdd85edca4dfbd7d201c562c"],
-            ["SFM16149257912885e742bda0ce043c1d65d71adbed5184c", "SFM1614930771414977e35ad24dc1c7cf6567014966a2636", "SFM1614932159520c59ed45fc520c40944318874a86b263b", "SFM1614932328365aa0809445237f51e0ace1faab865ad82", "SFM161493321441421f0f6517e9ab3cca4d30f2fc09180cc"],
-            ["Mobile Configuration","PM Process","Configuration Profiles"],
-            ["SFM Mobile Permissions","SFW SFM App Permissions"]
+            ["SFM162262926043236558bea5fba48208438649ae7391580"],["SFM1620263235219b6fea1c3e1a3167bd75e0d824c3d42c6"]
         ],
         "URL":"https://migrate.servicemax.com/MigrationTool/"
     },
     "MiscSetting":{
-        "CHECKONLY":"TRUE",
+        "CHECKONLY":"FALSE",
         "SPM_MODAL":"FALSE",
-        "OVERWRITE":"TRUE",
-        "HEADLESS":"FALSE",
+        "OVERWRITE":"FALSE",
+        "HEADLESS":"TRUE",
         "TIMEOUTS":{
             "VALIDATE":600000
         }
