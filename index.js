@@ -44,7 +44,8 @@ async function main(configPath){
 
     try{
       const curComp = listOfComp[currIndex];
-      await initiateMigration(browser,config,curComp);
+      var migrationStarted = await initiateMigration(browser,config,curComp);
+      console.log('Was Migration Started ? '+migrationStarted);
       if(checkOnly!='TRUE'){
         await tools.delay(120000);
         await sfUtil.waitForMigComp(tarLoginURL,config.target.Username,config.target.Password,multipleCompCallBack);
@@ -84,6 +85,7 @@ async function multipleCompCallBack(err, res){
 
 
 async function initiateMigration(browser,config,curComp){
+  var migrationStarted=false;
   console.log('\n*** Start processing components from Index '+currIndex);
   const context = await browser.createIncognitoBrowserContext();
   const page = await context.newPage();
@@ -236,6 +238,7 @@ async function initiateMigration(browser,config,curComp){
       const migrateButton = await deploySelection.waitForSelector('#deployData',{timeout: 120000});
       //console.log('After  migrateButton');
       await migrateButton.evaluate((e) => e.click());//HAL
+      migrationStarted=true;
       //console.log('After  migrateButton Click');
     
       //#msgBox1[style*="visibility: visible"]
@@ -246,6 +249,7 @@ async function initiateMigration(browser,config,curComp){
       if(deployMessage=='None of the selected configuration items qualify for migration.'){
         //throw 'No component selected for deployment';
         console.log('No component selected for deployment');
+        migrationStarted=false;
       } 
       await page.screenshot({ path: 'example.png' });
       await context.close();//HAL
@@ -254,7 +258,7 @@ async function initiateMigration(browser,config,curComp){
     console.log(err);
     await context.close();//HAL
   }
-  return ;  
+  return migrationStarted;  
 }
 
 module.exports = {
