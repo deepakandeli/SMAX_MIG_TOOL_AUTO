@@ -34,9 +34,13 @@ npm i smax_mig_tool_auto
         "URL":"https://migrate.servicemax.com/MigrationTool/"
     },
     "MiscSetting":{
+        "CHECKONLY":"FALSE",
         "SPM_MODAL":"FALSE",
         "OVERWRITE":"FALSE",
-        "HEADLESS":"TRUE"
+        "HEADLESS":"TRUE",
+        "TIMEOUTS":{
+            "VALIDATE":600000
+        }
     }
 }
 ```
