@@ -47,8 +47,12 @@ async function main(configPath){
       var migrationStarted = await initiateMigration(browser,config,curComp);
       console.log('Was Migration Started ? '+migrationStarted);
       if(checkOnly!='TRUE'){
-        await tools.delay(120000);
-        await sfUtil.waitForMigComp(tarLoginURL,config.target.Username,config.target.Password,multipleCompCallBack);
+        if(migrationStarted){
+          await tools.delay(120000);
+          await sfUtil.waitForMigComp(tarLoginURL,config.target.Username,config.target.Password,multipleCompCallBack); 
+        }else{
+          multipleCompCallBack(false,'NON_QUERY_CALL');
+        }
       }      
     }catch(err){
         console.log(err);
@@ -59,18 +63,22 @@ async function main(configPath){
 async function multipleCompCallBack(err, res){
   if (err) { return console.error(err); }
   console.log(res);
-  if(res.done && res.totalSize == 0){
+  if((res=='NON_QUERY_CALL') || (res.done && res.totalSize == 0)){
     currIndex=currIndex+1;
     console.log('listOfComp.length '+listOfComp.length+' currIndex '+currIndex);
     if(checkOnly!='TRUE'){
       if(listOfComp.length>currIndex){
         var curComp=listOfComp[currIndex];
-        await initiateMigration(browser,config,curComp);
+        var migrationStarted = await initiateMigration(browser,config,curComp);
+        console.log('Was Migration Started ? '+migrationStarted);
           if(listOfComp.length==currIndex+1){
             await browser.close();//HAL
           }else{
-            await tools.delay(120000);
-            await sfUtil.waitForMigComp(tarLoginURL,config.target.Username,config.target.Password,multipleCompCallBack);
+            if(migrationStarted){
+              await tools.delay(120000);
+              await sfUtil.waitForMigComp(tarLoginURL,config.target.Username,config.target.Password,multipleCompCallBack);
+            }else{
+              multipleCompCallBack(false,'NON_QUERY_CALL');            }
           }
       }else{
         await browser.close();//HAL
@@ -251,11 +259,13 @@ async function initiateMigration(browser,config,curComp){
         console.log('No component selected for deployment');
         migrationStarted=false;
       } 
-      await page.screenshot({ path: 'example.png' });
+      //await page.screenshot({ path: 'example.png' });
       await context.close();//HAL
     }
   }catch(err){
     console.log(err);
+    var pathLoc = 'error_'+Date.now()+'_'+curComp+'.png';
+    await page.screenshot({ path: pathLoc});
     await context.close();//HAL
   }
   return migrationStarted;  
