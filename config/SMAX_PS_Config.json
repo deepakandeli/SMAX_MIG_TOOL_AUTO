@@ -1,17 +1,18 @@
 {
     "source":{
         "Type":"sandbox",
-        "Username":"deepak.andeli@servicemax.com.hts.dev06",
-        "Password":"Scope@12345"
+        "Username":"deepak.andeli@servicemax.com.dev06",
+        "Password":"12345"
     },
     "target":{
         "Type":"production",
         "Username":"deepak.andeli@901trial.com",
-        "Password":"Melbourne@12345"
+        "Password":"12345"
     },
     "migration":{
         "components":[
-            ["SFM162262926043236558bea5fba48208438649ae7391580"],["SFM1620263235219b6fea1c3e1a3167bd75e0d824c3d42c6"]
+            ["SFM1615031871327f4bc5f439254eb24793e7ad2d1c12965"],
+            ["SFM161544001734952b8a032b20ea5687e744ea0c82ec560"]
         ],
         "URL":"https://migrate.servicemax.com/MigrationTool/"
     },
