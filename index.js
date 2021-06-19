@@ -198,18 +198,19 @@ async function initiateMigration(browser,config,curComp){
           }
         },{profileSel});
         console.log('Profile Selection - End');
+      }
   
-        //Expand validation result tree
-        let validTree='tr.whiteBg>td[style="width:82%"]>a';
-        const validTreeFrame = page;
-        await validTreeFrame.evaluate(({validTree}) => {
-          let anchorList = document.querySelectorAll(validTree);
-          var arrayLength = anchorList.length;
-          for(var i = 0; i < arrayLength; i++){
-            anchorList[i].click();
-          }
-        },{validTree});
-        debugger;
+      //Expand validation result tree
+      let validTree='tr.whiteBg>td[style="width:82%"]>a';
+      const validTreeFrame = page;
+      await validTreeFrame.evaluate(({validTree}) => {
+        let anchorList = document.querySelectorAll(validTree);
+        var arrayLength = anchorList.length;
+        for(var i = 0; i < arrayLength; i++){
+          anchorList[i].click();
+        }
+      },{validTree});
+      debugger;
         
         //let validComps='tr.whiteBg > td';
         let validComps='tr.whiteBg';
@@ -240,7 +241,7 @@ async function initiateMigration(browser,config,curComp){
           }
         },{validComps});
         console.log('Validation Result - End ');
-      }
+
       
         
       const migrateButton = await deploySelection.waitForSelector('#deployData',{timeout: 120000});
