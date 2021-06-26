@@ -12,6 +12,7 @@ var currIndex=0;
 var listOfComp; 
 var tarLoginURL;
 var checkOnly;
+failedComp=0;
 async function main(configPath){
   //Init Config  
     //var configJSON = tools.initConfig('./config/SMAX_PS_Config.json');
@@ -44,7 +45,7 @@ async function main(configPath){
 
     try{
       const curComp = listOfComp[currIndex];
-      var migrationStarted = await initiateMigration(browser,config,curComp);
+      var migrationStarted = await initiateMigration(browser,config,curComp,failedComp);
       console.log('Was Migration Started ? '+migrationStarted);
       if(checkOnly!='TRUE'){
         if(migrationStarted){
@@ -69,10 +70,14 @@ async function multipleCompCallBack(err, res){
     if(checkOnly!='TRUE'){
       if(listOfComp.length>currIndex){
         var curComp=listOfComp[currIndex];
-        var migrationStarted = await initiateMigration(browser,config,curComp);
+        var migrationStarted = await initiateMigration(browser,config,curComp,failedComp);
         console.log('Was Migration Started ? '+migrationStarted);
           if(listOfComp.length==currIndex+1){
             await browser.close();//HAL
+            if(failedComp<=0){
+              console.log('Found one or more component that could not be migrated');
+              process.exit(1);
+          }
           }else{
             if(migrationStarted){
               await tools.delay(120000);
@@ -82,6 +87,10 @@ async function multipleCompCallBack(err, res){
           }
       }else{
         await browser.close();//HAL
+        if(failedComp<=0){
+          console.log('Found one or more component that could not be migrated '+failedComp);
+          process.exit(1);
+        }
       }
     }
   }else{
@@ -92,7 +101,7 @@ async function multipleCompCallBack(err, res){
 }
 
 
-async function initiateMigration(browser,config,curComp){
+async function initiateMigration(browser,config,curComp,failedComp){
   var migrationStarted=false;
   console.log('\n*** Start processing components from Index '+currIndex);
   const context = await browser.createIncognitoBrowserContext();
@@ -216,7 +225,7 @@ async function initiateMigration(browser,config,curComp){
         let validComps='tr.whiteBg';
         const validationFrame = page.mainFrame();
         console.log('Validation Result - Start');
-         await validationFrame.evaluate(({validComps}) => {
+         await validationFrame.evaluate(({validComps,failedComp}) => {
           let anchorList = document.querySelectorAll(validComps);
           var arrayLength = anchorList.length;
           for(var i = 0; i < arrayLength; i++){
@@ -237,9 +246,13 @@ async function initiateMigration(browser,config,curComp){
             }
             if(curCompStatusStr!=''){
               console.log('-----> '+curCompStatusStr);
+              //This item will not be migrated
+              if(curCompStatusStr.includes('This item will not be migrated')){
+                failedComp++;
+              }              
             }          
           }
-        },{validComps});
+        },{validComps,failedComp});
         console.log('Validation Result - End ');
 
       
