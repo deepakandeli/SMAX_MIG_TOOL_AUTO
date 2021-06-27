@@ -45,7 +45,7 @@ async function main(configPath){
 
     try{
       const curComp = listOfComp[currIndex];
-      var migrationStarted = await initiateMigration(browser,config,curComp,failedComp);
+      var migrationStarted = await initiateMigration(browser,config,curComp);
       console.log('Was Migration Started ? '+migrationStarted);
       if(checkOnly!='TRUE'){
         if(migrationStarted){
@@ -63,19 +63,20 @@ async function main(configPath){
 
 async function multipleCompCallBack(err, res){
   if (err) { return console.error(err); }
-  console.log(res);
+  //console.log(res);
   if((res=='NON_QUERY_CALL') || (res.done && res.totalSize == 0)){
     currIndex=currIndex+1;
-    console.log('listOfComp.length '+listOfComp.length+' currIndex '+currIndex);
+    //console.log('listOfComp.length '+listOfComp.length+' currIndex '+currIndex);
     if(checkOnly!='TRUE'){
       if(listOfComp.length>currIndex){
         var curComp=listOfComp[currIndex];
-        var migrationStarted = await initiateMigration(browser,config,curComp,failedComp);
+        var migrationStarted = await initiateMigration(browser,config,curComp);
         console.log('Was Migration Started ? '+migrationStarted);
           if(listOfComp.length==currIndex+1){
             await browser.close();//HAL
-            if(failedComp<=0){
-              console.log('Found one or more component that could not be migrated');
+            //console.log('failedComp callback 1 ==> '+failedComp);
+            if(failedComp>0){
+              console.log('Found one or more component that could not be migrated \n');
               process.exit(1);
           }
           }else{
@@ -87,8 +88,9 @@ async function multipleCompCallBack(err, res){
           }
       }else{
         await browser.close();//HAL
-        if(failedComp<=0){
-          console.log('Found one or more component that could not be migrated '+failedComp);
+        console.log('failedComp callback 2 ==> '+failedComp);
+        if(failedComp>0){
+          console.log('Found one or more component that could not be migrated \n');
           process.exit(1);
         }
       }
@@ -101,7 +103,7 @@ async function multipleCompCallBack(err, res){
 }
 
 
-async function initiateMigration(browser,config,curComp,failedComp){
+async function initiateMigration(browser,config,curComp){
   var migrationStarted=false;
   console.log('\n*** Start processing components from Index '+currIndex);
   const context = await browser.createIncognitoBrowserContext();
@@ -212,6 +214,14 @@ async function initiateMigration(browser,config,curComp,failedComp){
       //Expand validation result tree
       let validTree='tr.whiteBg>td[style="width:82%"]>a';
       const validTreeFrame = page;
+
+      await page.exposeFunction("addFailedComp", function(curComp) {
+        //failedComp.push(curComp);
+        failedComp=failedComp+1;
+      });
+
+
+
       await validTreeFrame.evaluate(({validTree}) => {
         let anchorList = document.querySelectorAll(validTree);
         var arrayLength = anchorList.length;
@@ -225,7 +235,7 @@ async function initiateMigration(browser,config,curComp,failedComp){
         let validComps='tr.whiteBg';
         const validationFrame = page.mainFrame();
         console.log('Validation Result - Start');
-         await validationFrame.evaluate(({validComps,failedComp}) => {
+         await validationFrame.evaluate(({validComps}) => {
           let anchorList = document.querySelectorAll(validComps);
           var arrayLength = anchorList.length;
           for(var i = 0; i < arrayLength; i++){
@@ -245,14 +255,16 @@ async function initiateMigration(browser,config,curComp,failedComp){
               }
             }
             if(curCompStatusStr!=''){
-              console.log('-----> '+curCompStatusStr);
+              console.log('--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------');
+              console.log(curCompStatusStr);
+              console.log('--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------');
               //This item will not be migrated
               if(curCompStatusStr.includes('This item will not be migrated')){
-                failedComp++;
+                addFailedComp(curCompStatusStr);
               }              
             }          
           }
-        },{validComps,failedComp});
+        },{validComps});
         console.log('Validation Result - End ');
 
       
@@ -281,6 +293,7 @@ async function initiateMigration(browser,config,curComp,failedComp){
     var pathLoc = 'error_'+Date.now()+'_'+curComp+'.png';
     await page.screenshot({ path: pathLoc});
     await context.close();//HAL
+    failedComp=failedComp+1;
   }
   return migrationStarted;  
 }
