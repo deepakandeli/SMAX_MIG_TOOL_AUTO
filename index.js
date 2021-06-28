@@ -108,6 +108,10 @@ async function initiateMigration(browser,config,curComp){
   console.log('\n*** Start processing components from Index '+currIndex);
   const context = await browser.createIncognitoBrowserContext();
   const page = await context.newPage();
+  
+  let validateTimeout = config.MiscSetting.TIMEOUTS.VALIDATE;
+  await page.setDefaultNavigationTimeout(validateTimeout);   // change timeout
+
   page.on('console', (log) => console[log._type](log._text));
 
   const url = config.migration.URL;    
@@ -157,7 +161,7 @@ async function initiateMigration(browser,config,curComp){
     await validateButton.click();
   
     //console.log('Before Wait Response Validate');
-    let validateTimeout = config.MiscSetting.TIMEOUTS.VALIDATE;
+
   
     try{
       const validationResponse = await page.waitForResponse(
@@ -175,19 +179,19 @@ async function initiateMigration(browser,config,curComp){
       await tools.delay(10000);
       //console.log('After  Delay');
       const deploySelection = page;
-      await deploySelection.$('#validateUI[style*="visibility: visible"]',{timeout: 120000});
+      await deploySelection.$('#validateUI[style*="visibility: visible"]');
       //console.log('After  deploySelection');
     
       var toOverwrite = config.MiscSetting.OVERWRITE;
       if(toOverwrite=='TRUE'){
         //Over write
-        const selectAllOverwrite = await deploySelection.$('#selectAll',{timeout: 120000});
+        const selectAllOverwrite = await deploySelection.$('#selectAll');
         //console.log('After  selectAllOverwrite');
         await selectAllOverwrite.evaluate((e) => e.click());  
         //console.log('After  selectAllOverwrite Click');
   
         //profileSelectAllContainer
-        const selectAllCProfile = await deploySelection.$('#profileSelectAllContainer > input',{timeout: 120000});
+        const selectAllCProfile = await deploySelection.$('#profileSelectAllContainer > input');
         if(selectAllCProfile!=null){
           await selectAllCProfile.evaluate((e) => e.click());
           //console.log('After  selectAllCProfile Click');
@@ -269,7 +273,7 @@ async function initiateMigration(browser,config,curComp){
 
       
         
-      const migrateButton = await deploySelection.waitForSelector('#deployData',{timeout: 120000});
+      const migrateButton = await deploySelection.waitForSelector('#deployData');
       //console.log('After  migrateButton');
       await migrateButton.evaluate((e) => e.click());//HAL
       migrationStarted=true;
@@ -290,8 +294,8 @@ async function initiateMigration(browser,config,curComp){
     }
   }catch(err){
     console.log(err);
-    var pathLoc = 'error_'+Date.now()+'_'+curComp+'.png';
-    await page.screenshot({ path: pathLoc});
+    var pathLoc = 'error_'+Date.now()+'.png';
+    await page.screenshot({ path: pathLoc,fullPage: true});
     await context.close();//HAL
     failedComp=failedComp+1;
   }
