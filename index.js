@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+var parseString = require('xml2js').parseString;
 var jsforce = require('jsforce');
 var tools = require('./lib/SMAX_PS_Tools.js');
 var srcOrg = require('./lib/SMAX_PS_Src_Org.js');
@@ -9,7 +10,7 @@ var config;
 var browser;
 var noOfIterations=0;
 var currIndex=0;
-var listOfComp; 
+var listOfComp=[]; 
 var tarLoginURL;
 var checkOnly;
 failedComp=0;
@@ -20,7 +21,33 @@ async function main(configPath){
     config= JSON.parse(configJSON);
     const headLess = config.MiscSetting.HEADLESS;
     var headLessBool=false;
-    listOfComp = config.migration.components;
+    migType = config.migration.Type;
+    if(migType=='PACKAGE'){
+      loc = config.migration.Location;
+      var packageXML = tools.initPackage(loc);
+      parseString(packageXML, function (err, result) {
+        var types = result['Package'];
+
+        console.log('types ' +types.types.length);
+        var arrOfTypes = types.types;
+        if(arrOfTypes.length>0){
+          for(i=0;i<arrOfTypes.length;i++){
+            var arrOfMem = arrOfTypes[i].members;
+            if(arrOfMem.length>0){
+              var arrOfComp = [];
+              for(j=0;j<arrOfMem.length;j++){
+                console.log('arrOfMem['+j+'] '+arrOfMem[j].api[0]);
+                arrOfComp[j]=arrOfMem[j].api[0];
+              }
+              listOfComp[i]=arrOfComp;
+            }
+          }
+        }
+    });
+    console.log('listOfComp '+listOfComp);
+    }else if(migType=='LIST'){
+      listOfComp = config.migration.components;
+    }    
     if(headLess=='TRUE'){
         headLessBool=true;
     }
@@ -88,7 +115,7 @@ async function multipleCompCallBack(err, res){
           }
       }else{
         await browser.close();//HAL
-        console.log('failedComp callback 2 ==> '+failedComp);
+        //console.log('failedComp callback 2 ==> '+failedComp);
         if(failedComp>0){
           console.log('Found one or more component that could not be migrated \n');
           process.exit(1);

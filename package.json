@@ -1,6 +1,6 @@
 {
   "name": "smax_mig_tool_auto",
-  "version": "1.0.16",
+  "version": "1.0.18",
   "description": "Pupeteer script to automate deployment of ServiceMax migration from Source to Target org",
   "main": "index.js",
   "directories": {
@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "jsforce": "^1.10.1",
-    "puppeteer": "^8.0.0"
+    "puppeteer": "^8.0.0",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {},
   "scripts": {

@@ -1,0 +1,31 @@
+{
+    "source":{
+        "Type":"sandbox",
+        "Username":"deepak.andeli@servicemax.com.tec.devmax1",
+        "Password":"Melbourne@12345"
+    },
+    "target":{
+        "Type":"production",
+        "Username":"deepak.a@2098trial.com",
+        "Password":"Melbourne@12345"
+    },
+    "migration":{
+        "Type":"PACKAGE",
+        "Location":"./manifest/package.xml",
+        "components":[
+            ["SFM Wizards"]  
+        ],
+        "URL":"https://migrate.servicemax.com/MigrationTool/"
+    },
+    "MiscSetting":{
+        "CHECKONLY":"FALSE",
+        "SPM_MODAL":"FALSE",
+        "OVERWRITE":"TRUE",
+        "HEADLESS":"TRUE",
+        "TIMEOUTS":{
+            "SFLOGIN":600000,
+            "VALIDATE":3600000,
+            "GLOBAL":3600000           
+        }
+    }
+}
