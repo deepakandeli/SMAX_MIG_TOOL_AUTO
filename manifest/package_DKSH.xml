@@ -1,0 +1,1928 @@
+<?xml version="1.0" ?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types>
+    <members>
+      <api>Annual and 6 Monthly different tasks</api>
+      <label>Annual and 6 Monthly different tasks</label>
+    </members>
+    <members>
+      <api>DKSH Test Template</api>
+      <label>DKSH Test Template</label>
+    </members>
+    <members>
+      <api>Foundation PM Plan - Monthly Template</api>
+      <label>Foundation PM Plan - Monthly Template</label>
+    </members>
+    <members>
+      <api>Foundation PM Plan - Quarterly Template</api>
+      <label>Foundation PM Plan - Quarterly Template</label>
+    </members>
+    <members>
+      <api>Semi Annual. Two similar visits</api>
+      <label>Semi Annual. Two similar visits</label>
+    </members>
+    <members>
+      <api>Silver</api>
+      <label>Silver</label>
+    </members>
+    <members>
+      <api>Test Template</api>
+      <label>Test Template</label>
+    </members>
+    <name>pmplantemplate</name>
+  </types>
+  <types>
+    <members>
+      <api>Coffee Machine Tubing Cleanup</api>
+      <label>Coffee Machine Tubing Cleanup</label>
+    </members>
+    <name>skillmatchrules</name>
+  </types>
+  <types>
+    <members>
+      <api/>
+      <label>Business Process Config</label>
+    </members>
+    <members>
+      <api>AccountSummary</api>
+      <label>Account Summary</label>
+    </members>
+    <members>
+      <api>AverageResponseTime</api>
+      <label>Average Response Time</label>
+    </members>
+    <members>
+      <api>ContractPenetration</api>
+      <label>Attach Rate</label>
+    </members>
+    <members>
+      <api>FirstTimeFix</api>
+      <label>First Time Fix</label>
+    </members>
+    <members>
+      <api>MeanTimeBetweenFailure</api>
+      <label>Mean Time Between Failure</label>
+    </members>
+    <members>
+      <api>MeanTimeToComplete</api>
+      <label>Mean Time To Complete</label>
+    </members>
+    <members>
+      <api>MeanTimeToRepair</api>
+      <label>Mean Time To Repair</label>
+    </members>
+    <members>
+      <api>RepeatVisit</api>
+      <label>Repeat Visit</label>
+    </members>
+    <members>
+      <api>UpDownTime</api>
+      <label>Contract Up Time</label>
+    </members>
+    <members>
+      <api>Utilization</api>
+      <label>Utilization</label>
+    </members>
+    <name>spm</name>
+  </types>
+  <types>
+    <members>
+      <api>Active_PM_Plan_Process</api>
+      <label>Active PM Plan Process</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Active_PM_with_Contracts</api>
+      <label>Active PM with Contracts</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Active_PM_with_ContractsPerLocation</api>
+      <label>Active PM with Contracts per location</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Active_PM_without_Contracts</api>
+      <label>Active PM without Contracts</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Active_PM_without_ContractsPerLocation</api>
+      <label>Active PM without Contracts per location</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Preventive_Maintenance_Process</api>
+      <label>Preventive Maintenance Process - SVMX-PS</label>
+    </members>
+    <name>pmprocess</name>
+  </types>
+  <types>
+    <members>
+      <api>Territory AU</api>
+      <label>Territory AU</label>
+    </members>
+    <members>
+      <api>Territory CN</api>
+      <label>Territory CN</label>
+    </members>
+    <members>
+      <api>Territory TA</api>
+      <label>Territory TA</label>
+    </members>
+    <name>territorymatchrules</name>
+  </types>
+  <types>
+    <members>
+      <api>DKSH WO Entitlement - All</api>
+      <label>DKSH WO Entitlement - All</label>
+    </members>
+    <members>
+      <api>DKSH WO Entitlement - Field Service</api>
+      <label>DKSH WO Entitlement - Field Service</label>
+    </members>
+    <members>
+      <api>DKSH WO Entitlement - Products Serviced</api>
+      <label>DKSH WO Entitlement - Products Serviced</label>
+    </members>
+    <name>autoentitlement</name>
+  </types>
+  <types>
+    <members>
+      <api>DKSH Default</api>
+      <label>DKSH Default</label>
+    </members>
+    <name>mttsrules</name>
+  </types>
+  <types>
+    <members>
+      <api>SMAX_PS_Customer_Location_Search</api>
+      <label>Customer Location Search</label>
+    </members>
+    <members>
+      <api>SMAX_PS_My_Van_Location</api>
+      <label>My Van Location</label>
+    </members>
+    <members>
+      <api>SMAX_PS_MyVanStock</api>
+      <label>Inventory Search</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Parts_Request_Search</api>
+      <label>Parts Requests Search</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Product_Search</api>
+      <label>Product Search</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Service_Quote_Search</api>
+      <label>Service Quote Search</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Stock_Transfer_Search</api>
+      <label>Stock Transfer Search</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Stocking_Location_Search</api>
+      <label>Stocking Location Search</label>
+    </members>
+    <members>
+      <api>SRCH_ACCT_001</api>
+      <label>SVMXSTD: Account Search</label>
+    </members>
+    <members>
+      <api>SRCH_SN_001_APL</api>
+      <label>Serial Number Search</label>
+    </members>
+    <members>
+      <api>SRCH_Timesheet_Manager</api>
+      <label>SVMXSTD: Timesheet Manager</label>
+    </members>
+    <members>
+      <api>SRCH_Trunk_Stock</api>
+      <label>SVMXSTD:Search Trunk Stock</label>
+    </members>
+    <members>
+      <api>SVMX_PS_ Catalyst_Locations_Search</api>
+      <label>Locations Search</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Account_Search</api>
+      <label>Organizations Search</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Active_Work_Orders</api>
+      <label>Work Orders Search</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Contact_Search</api>
+      <label>Contacts Search</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Installed_Products_Search</api>
+      <label>Installed Products Search</label>
+    </members>
+    <members>
+      <api>SVMX_PS_My_Closed_Work_Orders</api>
+      <label>My Closed Work Orders Search</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Serial_Number_Search</api>
+      <label>Serial Number Search</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Timesheet_Manager</api>
+      <label>Timesheet Search</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Trunk_Stock</api>
+      <label>Trunk Stock Search</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Work_Orders</api>
+      <label>Work Orders Search</label>
+    </members>
+    <name>sfmsearch</name>
+  </types>
+  <types>
+    <members>
+      <api>Admin - SVMX-PS</api>
+      <label>Admin - SVMX-PS</label>
+    </members>
+    <members>
+      <api>Field Engineer - SVMX-PS</api>
+      <label>Field Engineer - SVMX-PS</label>
+    </members>
+    <members>
+      <api>Service Manager - SVMX-PS</api>
+      <label>Service Manager - SVMX-PS</label>
+    </members>
+    <name>sfmipadpermission</name>
+  </types>
+  <types>
+    <members>
+      <api>Admin - SVMX-PS</api>
+      <label>Admin - SVMX-PS</label>
+    </members>
+    <members>
+      <api>Field Engineer - SVMX-PS</api>
+      <label>Field Engineer - SVMX-PS</label>
+    </members>
+    <members>
+      <api>Service Manager - SVMX-PS</api>
+      <label>Service Manager - SVMX-PS</label>
+    </members>
+    <name>installbaseapp</name>
+  </types>
+  <types>
+    <members>
+      <api>SMAX_PS_SADJ001</api>
+      <label>Post to Inventory - Stock Adjustment (Create Stock) - SMAX PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Shipment_Process</api>
+      <label>Custom Process Shipments (Advanced) for Shipment Order</label>
+    </members>
+    <name>inventoryprocess</name>
+  </types>
+  <types>
+    <members>
+      <api>Account</api>
+      <label>Account</label>
+    </members>
+    <members>
+      <api>Case</api>
+      <label>Case</label>
+    </members>
+    <members>
+      <api>Contact</api>
+      <label>Contact</label>
+    </members>
+    <members>
+      <api>Cost__c</api>
+      <label>Cost__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Installed_Product__c</api>
+      <label>SVMXC__Installed_Product__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Parts_Request__c</api>
+      <label>SVMXC__Parts_Request__c</label>
+    </members>
+    <members>
+      <api>SVMXC__PM_Offering__c</api>
+      <label>SVMXC__PM_Offering__c</label>
+    </members>
+    <members>
+      <api>SVMXC__PM_Plan__c</api>
+      <label>SVMXC__PM_Plan__c</label>
+    </members>
+    <members>
+      <api>SVMXC__PM_Plan_Template__c</api>
+      <label>SVMXC__PM_Plan_Template__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Product_Serial__c</api>
+      <label>SVMXC__Product_Serial__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Product_Stock__c</api>
+      <label>SVMXC__Product_Stock__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Proforma_Invoice__c</api>
+      <label>SVMXC__Proforma_Invoice__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Quote__c</api>
+      <label>SVMXC__Quote__c</label>
+    </members>
+    <members>
+      <api>SVMXC__RMA_Shipment_Order__c</api>
+      <label>SVMXC__RMA_Shipment_Order__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Service__c</api>
+      <label>SVMXC__Service__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Service_Contract__c</api>
+      <label>SVMXC__Service_Contract__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Service_Group__c</api>
+      <label>SVMXC__Service_Group__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Service_Group_Members__c</api>
+      <label>SVMXC__Service_Group_Members__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Service_Order__c</api>
+      <label>SVMXC__Service_Order__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Service_Plan__c</api>
+      <label>SVMXC__Service_Plan__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Service_Pricebook__c</api>
+      <label>SVMXC__Service_Pricebook__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Service_Template__c</api>
+      <label>SVMXC__Service_Template__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Site__c</api>
+      <label>SVMXC__Site__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Stock_Adjustment__c</api>
+      <label>SVMXC__Stock_Adjustment__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Stock_Transfer__c</api>
+      <label>SVMXC__Stock_Transfer__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Task_Template__c</api>
+      <label>SVMXC__Task_Template__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Timesheet__c</api>
+      <label>SVMXC__Timesheet__c</label>
+    </members>
+    <members>
+      <api>SVMXC__Warranty__c</api>
+      <label>SVMXC__Warranty__c</label>
+    </members>
+    <name>sfmwizardlayout</name>
+  </types>
+  <types>
+    <members>
+      <api>SMAX_PS_1631616858767</api>
+      <label>SMAX_PS_Utilisationcheck</label>
+    </members>
+    <name>timesheet</name>
+  </types>
+  <types>
+    <members>
+      <api>Create___Work_Order__Field_Service__from_IP</api>
+      <label>Create - Work Order (Field Service) from IP</label>
+    </members>
+    <members>
+      <api>Create___Work_Order_from_Installed_Productv1</api>
+      <label>Create - Work Order from Installed Productv1</label>
+    </members>
+    <members>
+      <api>Create_Contract_From_Plan_BG_SVMX_PS</api>
+      <label>Create Service Contract From Service Plan(BG Process)-SVMX-PS</label>
+    </members>
+    <members>
+      <api>Edit___Field_Service_Case___SVMX_PS</api>
+      <label>Edit - Field Service Case - SVMX-PS</label>
+    </members>
+    <members>
+      <api>EVT_005</api>
+      <label>View Event</label>
+    </members>
+    <members>
+      <api>Manage_Work_Order_Product_Service_Detail_Lines</api>
+      <label>Manage Work Order Product Service Detail Lines</label>
+    </members>
+    <members>
+      <api>SFM1580180699689a91b14a1bb5c40f8bc2efeeaf29fa8a6</api>
+      <label>Create - Stocking Location From Account - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM1580424759984f54d2a66c25380ae857b3aa3b36dea80</api>
+      <label>Initiate Start Travel</label>
+    </members>
+    <members>
+      <api>SFM15804256526733a2e4f4a6ae0e076ddd87a22f9a4816e</api>
+      <label>Initiate Work</label>
+    </members>
+    <members>
+      <api>SFM15804315288509009074f3b612d1b8d3371e72626b9dc</api>
+      <label>Create - Service Request  from Installed Product</label>
+    </members>
+    <members>
+      <api>SFM1580791258695f05d1afcceeac8e1507ddc3ab7d7527a</api>
+      <label>Create - Service Contract Renewal - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM158079704209641b71b612e191c610bfe276d1a29de25</api>
+      <label>Create Service Contract Renewal Data Map - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM15808280039889462340cdfa7ccaa763db242ae94c326</api>
+      <label>Output Document - Service Report (French) - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM1580829470952db4b8cd2f811f04173f076a373137749</api>
+      <label>Output Document - Estimate Report (French) - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM158083023882168bc503b6c0ba1a48928550a3330d497</api>
+      <label>Output Document - Work Order Checklists (French) - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM158083560426153202e6da5a338caf5160877b5397ad6</api>
+      <label>Create - Field Work Order from Service Request - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM1580838095865a0c0ed3e825bcf6abd0bbca474be5b88</api>
+      <label>View - Event SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM15813559467460b5bd57d74661244df0d0d32b73c9eaa</api>
+      <label>Create - Remote Work Order from Service Request - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM15821790536208c9de2bcb1ddf299e86c6c41aed764c3</api>
+      <label>Edit - WO Status - Finished Remote - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM162682994439130eabcb7651e5101f6a67c5e430a687d</api>
+      <label>View - Product Stock - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16312435259512ebba3e97a0edc58a1f383f9875f16c1</api>
+      <label>View - Customer Location - SMAX-PS</label>
+    </members>
+    <members>
+      <api>SFM1631243973875f4e98ac8a11097415d8afc02f0e274d5</api>
+      <label>View - Stocking Location - SMAX-PS</label>
+    </members>
+    <members>
+      <api>SFM1631515921340b8c1da176d2d19ebd76eb6eba40ef08e</api>
+      <label>Create - Customer Location</label>
+    </members>
+    <members>
+      <api>SFM163159515441210410d8b5330d8ec0f3e02fd36642cbe</api>
+      <label>Create - Installed Product (Competitor) from Location - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM163160019796505a7e2b2b06a2e5c80a5410e537b0ceb</api>
+      <label>View - Product Warranty - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1631875607891e20800ffe37dae17b0bab66b607320c2</api>
+      <label>SMAX_PS_IP_To_ExistingCustomerEquipment</label>
+    </members>
+    <members>
+      <api>SFM163349579426414bbe444eba5ebe1720b6c356042b0d6</api>
+      <label>SMAX_PS_Create - Service Contract Renewal</label>
+    </members>
+    <members>
+      <api>SFM16335009539616639124b191aab83488f369c71cb387e</api>
+      <label>View - Service Contract - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1634126543789f269d3bc954563839e4dea68858e4455</api>
+      <label>SMAX_PS_Create - Auto Create Service Contract Quote From Service Contract</label>
+    </members>
+    <members>
+      <api>SFM16345207294611dbb73ea4975b63ec8d6420a6c20634b</api>
+      <label>SVMX_PS_Update PM Kit Custodian</label>
+    </members>
+    <members>
+      <api>SFM16351307920476a2b8b1f700ad523c3f71c5d2cd23717</api>
+      <label>Create New Event - SMAX-PS</label>
+    </members>
+    <members>
+      <api>SFM163592933452353f4a4b24af3434b5956cc5dd6476d79</api>
+      <label>Edit - Service Pricebook - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16365207431033d567209f8b3fb930fae027fbbcd39c7</api>
+      <label>Create - Service Quote Work Order from IP - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16366068168430aedfa9511e4b2723f5d2ed8ab61c76b</api>
+      <label>SMAX_PS_Create Preventive Maintenance Plan From PM Template</label>
+    </members>
+    <members>
+      <api>SFM16369535827075c23250326af8627db1321039655a962</api>
+      <label>SMAX_PS_Edit Service Quote and Lines</label>
+    </members>
+    <members>
+      <api>SFM16369554675548a2f5ac3450c6b78a59aef076c413c19</api>
+      <label>Create - Parts Request from Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM163698021369250a44a607c1433b323668f530ae0a235</api>
+      <label>SMAX_PS_Edit - Cancel Parts Request</label>
+    </members>
+    <members>
+      <api>SFM163714489005332d4a893ea3f399b233f18503e915df2</api>
+      <label>SMAX_PS_Edit - WO - Service Quote Approval Status Customer Accepted</label>
+    </members>
+    <members>
+      <api>SFM1637149532969e5e193323fd3b8b3ad498a88ce101cbb</api>
+      <label>SMAX_PS_Edit - WO - Service Quote Approval Status_Customer Rejected</label>
+    </members>
+    <members>
+      <api>SFM16373061856868b73a8e7008dddedb5a272e9bd084cdd</api>
+      <label>Edit - WO Debrief - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16373221818332af9d4469ebf2884f5893b823841566e</api>
+      <label>SMAX_PS_Create-Parts Request</label>
+    </members>
+    <members>
+      <api>SFM16375616182906bf060e913b63d1a15e4a95d611aca0b</api>
+      <label>Edit - Product Stock - Bin Number - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM163764545741200f790de8eb78c5b3c5680834aeb5684</api>
+      <label>SMAX_PS_Parts_Request_Approval</label>
+    </members>
+    <members>
+      <api>SFM16377331868833c5abd84ff241c3d632056351430886e</api>
+      <label>View - Parts Request - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16377338314665122ff07d0caf92a7f976d23265ac1dc</api>
+      <label>SMAX_PS_Service_Quote_Approval</label>
+    </members>
+    <members>
+      <api>SFM1637908690238a8dca559d7f7602c4231c1522c2186f9</api>
+      <label>SMAX_PS_Create-Work Order from Service Quote</label>
+    </members>
+    <members>
+      <api>SFM16379166040514a5f51a2ddc3d18046116e9618e1926e</api>
+      <label>SMAX_PS_Create-Service Quote from Service Quote</label>
+    </members>
+    <members>
+      <api>SFM16382442490050b4f5566991b97d703dda5b450627543</api>
+      <label>SMAX_PS_Create Linked Work Order</label>
+    </members>
+    <members>
+      <api>SFM16382487776015853bb6a52a6bd19e261f42d59859a9b</api>
+      <label>Create - Service Quote from Location - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1638250029456eab0a3d9a1bcae3aafade1e0d922c9c5</api>
+      <label>SMAX_PS_Create-Service Quote from Work Order</label>
+    </members>
+    <members>
+      <api>SFM163836988920659d35bccc375da4233d8b4cda581ae9f</api>
+      <label>Edit - WO Initial Response Completed (Remote) - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM1638523987379120c57f2809545a53bf678c4268c09fe</api>
+      <label>SMAX_PS_Create-Parts Request from Approved Service Quote</label>
+    </members>
+    <members>
+      <api>SFM1638534932253d5ce4ad5a2a6438d938c212d84127666</api>
+      <label>View - Installed Product - Competitor - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1639122382002c933905e550a174dc802bb2017bbc98d</api>
+      <label>SMAX_PS_Reassign_WO</label>
+    </members>
+    <members>
+      <api>SFM1639378716498cfdf4f873a9691603bb731fa933673ae</api>
+      <label>Daily SIR</label>
+    </members>
+    <members>
+      <api>SFM1639378883246bada8b933521bd8b9f37866c6895d658</api>
+      <label>Multiday Service Report</label>
+    </members>
+    <members>
+      <api>SFM1639450593119ea764abe9e99351cef245e4833727a20</api>
+      <label>WO Ready for Dispatch - SMAX-PS</label>
+    </members>
+    <members>
+      <api>SFM16395224201992199fd5d23e9b831a9319282d6c32c8b</api>
+      <label>View - Work Detail - Usage - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1639549116160e8a0680e4d06c31dac07fb22faecd2cb</api>
+      <label>View - Service Quote - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1639607472694c8eed94acb3252c752f7331ce24e3f4e</api>
+      <label>Product Cost Dummy</label>
+    </members>
+    <members>
+      <api>SFM1639987162087ddb6852d4cf7e8410132139e976f3950</api>
+      <label>Daily SIR_V1</label>
+    </members>
+    <members>
+      <api>SFM16411920007594affb866d92d78e93a6925e026d86c17</api>
+      <label>SMAX_PS_Create Field Service WO From Remote WO</label>
+    </members>
+    <members>
+      <api>SFM1641439032213a8f7ad3c50ad2410f58c9d7879687701</api>
+      <label>Create - Stock Transfer From Location - SMAX-PS</label>
+    </members>
+    <members>
+      <api>SFM1642056875388029877b8903fe115028821212fbad75d</api>
+      <label>Edit - WO Problem Codes - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16421248185532ccd9a34c04ba070576dc9318d2ea2b8</api>
+      <label>Edit - Stock Transfer - In Progress - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1642376213512beee6767127ee5037841486b278040ab</api>
+      <label>Edit - Stock Transfer Lines - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1642388359367930ef4869fcad5af8ab99f99d8f7fa74</api>
+      <label>Edit - Stock Transfer Goods Receipt - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM164238986499598a527e9188644cb0f0f7e92965e4239</api>
+      <label>Edit - Stock Transfer - Cancel - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1642487002422517974206ca8dbf30bab547c99410137</api>
+      <label>View - Stock Transfer - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16425031634830300d9236a557ffeb49e43a405155280</api>
+      <label>View - Stocked Serial - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1642550313958bf8f7e999e338c6ea68a9ef4f069f285</api>
+      <label>View - Stock Transfer Line - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1642639172211f03300bacde5029c46476b58bdb801b8</api>
+      <label>Edit - Stocked Serial Restricted - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1642646968803cf120db8bc69540c38f5e89842438ec1</api>
+      <label>Edit - Stock Transfer - Perform Stock Transfer - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1643087931023806287c4e636fd308b3665de49da39ad</api>
+      <label>SMAX_PS_View_PartsRequestlines</label>
+    </members>
+    <members>
+      <api>SFM164325755330476b60bb6cbb35c77ff2b2cf01a5120fe</api>
+      <label>Edit - Stock Adjustment</label>
+    </members>
+    <members>
+      <api>SFM164325902816815dd92afa301926d4753b245edd88e93</api>
+      <label>Edit - Stock Adjustment - Cancel - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1643259244308a03ccc1417e4be740a39a422ccfa6b05</api>
+      <label>Edit - Decrease Stock Adjustment Lines - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16432669065887a3d6e8e554bb6c6c78729efb60b8a95</api>
+      <label>Edit - Stock Adjustment - In Progress - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1643267337786b8ee1f741d021ee0585e2eeea7217dcc</api>
+      <label>Edit - Stock Adjustment - Perform Stock Transfer - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1644199089243ea784e0a84146a162ef148d4815ca167</api>
+      <label>Create Stock Adjustment From Location - Increase</label>
+    </members>
+    <members>
+      <api>SFM1644208201397d4c30f03d0f49ef44370015e2df071e8</api>
+      <label>Edit - Increase Stock Adjustment Lines - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM164420888867669662c7f9a084c3e14f68260795ff181</api>
+      <label>Edit - Increase Stock Adjustment - In Progress - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16443134170041e5d4603e1793d6cd0a45d6a501b33db</api>
+      <label>SMAX_PS_Edit_Installed Product (Competitor)</label>
+    </members>
+    <members>
+      <api>SFM1644319678822efd3977564139bf9d7fc69da6d72a6ce</api>
+      <label>Edit - WO Re-Assign - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16445338039460d4dc2c7d9c9de4d8b87026fa4fee6e6</api>
+      <label>Create - Task Template from WO - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1644663023199a2a85cf504f32aaee5cf1cdbc874a8b1</api>
+      <label>Edit - Task Template - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1644723090314f151f4808157994ccd6507a26d7c5a79</api>
+      <label>View - Work Detail - Task - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1644723365891a1df26c3604d33389ae160cc2cd7a682</api>
+      <label>View - Work Detail - Problem - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM164472439461104b7aec2f11fa183c7f09246342c75ef</api>
+      <label>View - Problem - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1644821706962b58def6c9f1cfea061d78a6a79ef298f</api>
+      <label>Create  - Work Details From Task Template - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1644821816753d0cdd8674799c81903af8c20b11d0eaf</api>
+      <label>SMAX_PS_TT To Work Order Multi Src</label>
+    </members>
+    <members>
+      <api>SFM1644845344224f10f4bc75f1065c828a93643f63fc68b</api>
+      <label>Edit - Service Contract - Submit for Approval - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1644845811189db4f61fbe5d2b1f9ba3ac1a0efcbeb00</api>
+      <label>Edit - Service Contract - Customer Accepted - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1644846129477da30008f4d5fed438fc58204a232b58f</api>
+      <label>Edit - Service Contract - Customer Rejected - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16449273946246be10eda59d385f5982b16f77abc149b</api>
+      <label>SMAX_PS_Currency_Type</label>
+    </members>
+    <members>
+      <api>SFM164509040778978463087b644f4f05ef7a021535eb22d</api>
+      <label>Edit - Work Order - Manage Products Serviced Linked - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1645159643662e9bbdbad6c0e4ea901d7cf494ea39994</api>
+      <label>SMAX_PS_Add/Edit_Products_Serviced</label>
+    </members>
+    <members>
+      <api>SFM1645177455674adb7cd7cc9e9acef1d96d31438e570d3</api>
+      <label>Edit - Self-Dispatch or Reschedule</label>
+    </members>
+    <members>
+      <api>SFM1645178360632b25dea8c6153b04995ed8f9011021166</api>
+      <label>SMAX_PS_View_WO_Products_Serviced</label>
+    </members>
+    <members>
+      <api>SFM16452603778036fe8e41a28c448fc54bf46357bbacc33</api>
+      <label>Edit - Location Information (Customer) - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM164537684737555d8a78c50913fd2f1ad49b9d0e73f2d</api>
+      <label>Edit - Parts Request - Status Completed - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1645377064314d88cbe1389021657160a5737a8ec6079</api>
+      <label>Edit - Update Parts Request Lines (Logistics) - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM1646724773024e4064541429b5d91a06fab5aa3fd1ff4</api>
+      <label>SMAX_PS_Cancel Parts Request</label>
+    </members>
+    <members>
+      <api>SFM1646794542131cccb55a3be4dba3de64ada08885618c1</api>
+      <label>Update Service Quote Part Line - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM1646873338660017455aeffe9bd9499948329ceec47b1</api>
+      <label>Edit - Stock Transfer - Perform Stock Transfer - SMAX PSv2</label>
+    </members>
+    <members>
+      <api>SFM1646881413127d650c9f977379f638b76e9ccc11733e8</api>
+      <label>Edit - Stock Transfer - Perform Stock Transfer - SMAX PSv2</label>
+    </members>
+    <members>
+      <api>SFM1647326228296a6f6b45f15fd28f609c4e9a5c1bf4dfa</api>
+      <label>Create - Stock Transfer From Location (Warehouse) - SMAX-PS</label>
+    </members>
+    <members>
+      <api>SFM1647515889922abcf387374142a44f00ee5a8032548fa</api>
+      <label>View - Work Detail - Usage - Parts - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16475161045017474ebbaf44b2add1d93941d476e72e5</api>
+      <label>View - Work Detail - Usage - Non-Parts  - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16475218395754312f1893978cd14c71e4f400cc21d2d</api>
+      <label>Warranty Terms - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM165054178531949907cd52b5a2e45d9357f173e5586ee</api>
+      <label>View - Remote Work Order - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SFM1654162009073efcb2990fd63c725ab5d7d31fd90bb41</api>
+      <label>Self Dispatch Work Order - SMAX-PS</label>
+    </members>
+    <members>
+      <api>SFM16559900685360ef993b0cb840a97163f24d9ddf0172b</api>
+      <label>Create Work Template - SMAX PS</label>
+    </members>
+    <members>
+      <api>SFM16559989727347070e99bf13367ca740fed62a675ec6d</api>
+      <label>Create Work Template v2 - SMAX PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Catalyst_Edit_Warranty_Terms</api>
+      <label>Edit - Warranty Terms - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Account</api>
+      <label>Create - Organization - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Account_From_Account</api>
+      <label>Create - Account From Account - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_App_Prod_From_Wty_Terms</api>
+      <label>Create - Applicable Products from Warranty Terms - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Contact</api>
+      <label>Create - Contact - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Contact_From_Account</api>
+      <label>Create - Contact from Account - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_DepotWO</api>
+      <label>Create - Depot Repair Work Order - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Field_Service_Case_from_Account</api>
+      <label>Create - Field Service Case from Account - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Field_Service_Case_from_IP</api>
+      <label>Create - Field Service Case from IP - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Field_Service_Case_from_Location</api>
+      <label>Create - Field Service Case from Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Field_Service_WO_from_Case</api>
+      <label>Create - Field Service WO from Case - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_FS_Work_Order_from_Location</api>
+      <label>Create - Field Service Work Order from Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Install_work_order_from_IP</api>
+      <label>Create - Install work order from Installed Product  - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Install_Work_Order_from_Location</api>
+      <label>Create - Install Work Order from Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Installed_Product</api>
+      <label>Create - Installed Product - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_IP_From_IP</api>
+      <label>Create - Installed Product from Installed Product - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_IP_From_Location</api>
+      <label>Create - Installed Product from Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Location</api>
+      <label>Create - Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Location_From_Account</api>
+      <label>Create - Customer Location From Account - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Location_From_Location</api>
+      <label>Create - Location from Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Location_From_Technician</api>
+      <label>Create - Location From Technician - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Parts_Order_From_Location</api>
+      <label>Create - Parts Order From Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Parts_Order_From_WO_RMA</api>
+      <label>Create - Parts Order From Work Order (RMA) - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Parts_Order_From_WO_Ship</api>
+      <label>Create - Parts Order from Work Order (Shipment) - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Parts_Request_From_WO</api>
+      <label>Create - Parts Request from Work Order - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_PM_FromPMOffering</api>
+      <label>Create - Preventive Maintenance Plan From PM Offerings - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_PM_FromSContract</api>
+      <label>Create - Preventive Maintenance Plan From Service Contract - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_PM_FromTemplate</api>
+      <label>Create - Preventive Maintenance Plan From PM Template - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_PM_Plan_from_Account</api>
+      <label>Create - Preventive Maintenance Plan from Account - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_PM_Plan_From_IP</api>
+      <label>Create - Preventive Maintenance Plan from Installed Product - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_PM_Plan_From_Location</api>
+      <label>Create - Preventive Maintenance Plan from Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Product</api>
+      <label>Create - Product - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Product_Wty_from_Wty_Terms</api>
+      <label>Create - Product Warranty from Warranty Terms - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Revisit_WO_from_WO</api>
+      <label>Create - Revisit Work Order from Work Order - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_SC_FromServicePlan</api>
+      <label>Create - Service Contract From Service Plan(BackGround Process) - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_SC_ServicePlan</api>
+      <label>Create - Service Contract from Service Plan - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Service_Contract_from_Acct</api>
+      <label>Create - Service Contract from Account - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Service_Contract_From_IP</api>
+      <label>Create - Service Contract from Installed Product - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Service_Contract_From_Loc</api>
+      <label>Create - Service Contract from Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_ShipmentfromPartReq</api>
+      <label>Create - Shipment From Parts Request - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_ShipmentfromRMA</api>
+      <label>Create - Shipment From RMA - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Stock_Adjustment_From_Loc</api>
+      <label>Create - Decrease Stock Adjustment From Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Stock_Serial_From_PrdStock</api>
+      <label>Create - Stocked Serial from Product Stock - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Svc_Con_From_Svc_Con</api>
+      <label>Create - Service Contract From Service Contract (Renewal) - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Tech_From_Service_Team</api>
+      <label>Create - Technician From Service Team - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Work_Order</api>
+      <label>Create - Work Order - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Work_Order_From_IP</api>
+      <label>Create - Work Order from Installed Product - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Create_Work_Order_From_Location</api>
+      <label>Create - Work Order from Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit___Activate_PM_Plan</api>
+      <label>Edit - Activate PM Plan - SVMX PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit___Cancel_PM_Plan</api>
+      <label>Edit - Cancel PM Plan - SVMX PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Account_Additional_Info</api>
+      <label>Edit - Account Additional Information - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Account_Address_Information</api>
+      <label>Edit - Account Address Information - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Account_Information</api>
+      <label>Edit - Account Information - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Cancel_Proforma_Invoice</api>
+      <label>Edit - Cancel Proforma Invoice - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_CLOG_ExpensePricing</api>
+      <label>Edit - Service Plan Expense Pricing - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_CLOG_FlateRate</api>
+      <label>Edit - Service Plan Pricing Rule - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_CLOG_LaborPricing</api>
+      <label>Edit - Service Plan Labor Pricing - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_CLOG_PMOffering</api>
+      <label>Edit - PM Offering - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_CLOG_ServiceOffering</api>
+      <label>Edit-  Service Offering - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_CLOG_TravelPolicy</api>
+      <label>Edit - Service Plan Travel Policy - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Contact_Address_Info</api>
+      <label>Edit - Contact Address Information - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Contact_Information</api>
+      <label>Edit - Contact Information - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Coverage</api>
+      <label>Edit - Coverage - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Installed_Product_Details</api>
+      <label>Edit - Installed Product Details - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Installed_Product_Key_Dates</api>
+      <label>Edit - Installed Product Key Dates - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Installed_Product_Loc_Info</api>
+      <label>Edit - Installed Product Location Info - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_IP_Customer_Info</api>
+      <label>Edit - Installed Product Customer Info - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Location_Address</api>
+      <label>Edit - Location Address - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Location_Approved_Stocking</api>
+      <label>Edit - Location Approved Stocking - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Location_Information</api>
+      <label>Edit - Location Information (Internal) - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Parts_Request_Lines</api>
+      <label>Edit - Add/Remove Parts Request Lines - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_PMPlanTemplate</api>
+      <label>Edit - Preventive Maintenance Plan Template - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Preventive_Maintenance_Plan</api>
+      <label>Edit - Preventive Maintenance Plan - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Product_Warranty</api>
+      <label>Edit - Product Warranty - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_SC_Activate</api>
+      <label>Edit - Activate Contract - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_SC_Cancelation</api>
+      <label>Edit - Cancel Service Contract - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_SC_ExpensePricing</api>
+      <label>Edit - Service Contract Expense Pricing - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_SC_LaborPricing</api>
+      <label>Edit - Service Contract Labor Pricing - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_SC_PartsPricing</api>
+      <label>Edit - Service Contract Parts Pricing - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_SC_PricingRule</api>
+      <label>Edit - Service Contract Pricing Rule - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_SC_TravelPolicy</api>
+      <label>Edit - Service Contract Travel Policy - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Self_Dispatch</api>
+      <label>Edit - Self-Dispatch - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Service</api>
+      <label>Edit - Service - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Service_Team_Dispatch_Access</api>
+      <label>Edit - Service Team Dispatch Access - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Service_Team_Information</api>
+      <label>Edit - Service Team Information - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Stock_Transfer_Lines</api>
+      <label>Edit - Add/Remove Stock Transfer Line - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Technician_Expertise</api>
+      <label>Edit - Technician Expertise - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Technician_Information</api>
+      <label>Edit - Technician Information - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Technician_Prod_Serviced</api>
+      <label>Edit - Technician Prod Serviced - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Timesheet_Daily_Summary</api>
+      <label>Edit - Timesheet Daily Summary - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Timesheet_Entry</api>
+      <label>Edit - Timesheet Entry - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Timesheet_Status</api>
+      <label>Edit - Timesheet Status - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Acknowledge_By_Technician</api>
+      <label>Edit - WO Acknowledge By Technician - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Actual_Restoration</api>
+      <label>Edit - WO Actual Restoration - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Contact</api>
+      <label>Edit - WO Contact - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Initial_Response_Complete</api>
+      <label>Edit - WO Initial Response Completed - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Installed_Product</api>
+      <label>Edit - WO Installed Product - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Notes_To_Engineer</api>
+      <label>Edit - WO Notes to Engineer - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Order_Information</api>
+      <label>Edit - WO Order Information - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Ownership</api>
+      <label>Edit - WO Ownership - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Rejected_By_Technician</api>
+      <label>Edit - WO Rejected By Technician - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Rejected_By_Technician_V2</api>
+      <label>Edit - WO Rejected By Technician - SVMX-PS V2</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Sales_Lead</api>
+      <label>Edit - WO Sales Lead - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Status_Arrive_Onsite</api>
+      <label>Edit - WO Status - Arrive Onsite - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Status_Awaiting_Customer</api>
+      <label>Edit - WO Status - Awaiting Customer - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Status_Cancel</api>
+      <label>Edit - WO Status - Cancel - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Status_Close</api>
+      <label>Edit - WO Status - Close - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Status_Closed__Remote</api>
+      <label>Edit - WO Status - Closed (Remote WO) - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Status_Complete</api>
+      <label>Edit - WO Status - Complete - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Status_Estimate_Approved</api>
+      <label>Edit - WO Status - Estimate Approved - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Status_FinishedOnsite</api>
+      <label>Edit-WO Status - Finished Onsite - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Status_Ready_To_Invoice</api>
+      <label>Edit - WO Status - Ready To Invoice - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Status_Requires_Revisit</api>
+      <label>Edit - WO Status - Requires Revisit - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Status_Start_Travel</api>
+      <label>Edit - WO Status - Start Travel - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WO_Status_Start_Travel_V2</api>
+      <label>Edit - WO Status - Start Travel - SVMX-PS -V2</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_WorkTemplate</api>
+      <label>Edit - Work Template - SVMX - PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Installation_Checklist</api>
+      <label>Installation Checklist</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Output_Doc_Estimate_Report</api>
+      <label>Output Document - Estimate Report - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Output_Doc_Service_Report</api>
+      <label>Output Document - Service Report - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Output_Document_Work_Order_Checklists</api>
+      <label>Output Document - Work Order Checklists - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_PartsRequest_OutputDoc1</api>
+      <label>Output Document - Parts Request - SVMX PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_ProformaInvoice_OutputDoc1</api>
+      <label>Output Document - Proforma Invoice - SVMX PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_RMA__Receive_Parts</api>
+      <label>RMA - Receive Parts</label>
+    </members>
+    <members>
+      <api>SVMX_PS_RMA_OutputDoc2</api>
+      <label>Output Document - RMA - SVMX PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Safety_Checklist</api>
+      <label>Safety Checklist</label>
+    </members>
+    <members>
+      <api>SVMX_PS_ServiceContract_OutputDoc1</api>
+      <label>Output Document - Service Contract - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_ServiceContract_OutputDoc2</api>
+      <label>Output Document - Service Contract Quote  -  SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Shipment___Receive_Parts</api>
+      <label>Shipment - Receive Parts</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Shipment_Order</api>
+      <label>Output Document - Shipment Order - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_View_Account</api>
+      <label>View - Account - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_View_Contact</api>
+      <label>View - Contact - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_View_Installed_Product</api>
+      <label>View - Installed Product - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_View_Location</api>
+      <label>View - Location - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_View_Parts_Order</api>
+      <label>View - Parts Order - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_View_Product</api>
+      <label>View - Product - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_View_Timesheet</api>
+      <label>View - Timesheet - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_View_Timesheet_Daily_Summary</api>
+      <label>View - Timesheet Daily Summary - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_View_Work_Order</api>
+      <label>View - Work Order - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_VS_Edit_Restock_Part_Out_ReturnInstallProd</api>
+      <label>Edit - Restock Part Out (Return IP) - SVMX-PS-VS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_VS_Edit_Restock_Part_Out_ReturnPartQty</api>
+      <label>Edit - Restock Part Out (Return Part, Return Qty) - SVMX-PS-VS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_WO_Status___Arrive_Onsite_V2</api>
+      <label>Edit - WO Status - Arrive Onsite - SVMX-PS V2</label>
+    </members>
+    <members>
+      <api>SVMXEVT_005</api>
+      <label>View Event</label>
+    </members>
+    <name>sfmtargetmanager</name>
+  </types>
+  <types>
+    <members>
+      <api>SVMX_PS_All_Accounts</api>
+      <label>All Accounts - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Critical_WO_Not_Dispatched</api>
+      <label>All Critical Work Orders - Not Dispatched - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Customer_Locations</api>
+      <label>All Customer Locations - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_My_Open_Work_Orders</api>
+      <label>My Open Work Orders</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Stocking_Locations</api>
+      <label>All Stocking Locations - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Work_Orders_Dispatched</api>
+      <label>All Work Orders - Dispatched - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Work_Orders_Not_Dispatched</api>
+      <label>All Work Orders - Not Dispatched - SVMX-PS</label>
+    </members>
+    <name>dcview</name>
+  </types>
+  <types>
+    <members>
+      <api>Admin - SVMX-PS</api>
+      <label>Admin - SVMX-PS</label>
+    </members>
+    <members>
+      <api>DKSH</api>
+      <label>DKSH</label>
+    </members>
+    <members>
+      <api>Field Engineer - SVMX-PS</api>
+      <label>Field Engineer - SVMX-PS</label>
+    </members>
+    <members>
+      <api>Org-Wide - SVMX-PS</api>
+      <label>Org-Wide - SVMX-PS</label>
+    </members>
+    <members>
+      <api>Service Manager - SVMX-PS</api>
+      <label>Service Manager - SVMX-PS</label>
+    </members>
+    <name>profiles</name>
+  </types>
+  <types>
+    <members>
+      <api>1</api>
+      <label>1</label>
+    </members>
+    <members>
+      <api>Australia INS Gold Contract</api>
+      <label>Australia INS Gold Contract</label>
+    </members>
+    <members>
+      <api>Australia INS Non-Contract Normal</api>
+      <label>Australia INS Non-Contract Normal</label>
+    </members>
+    <members>
+      <api>Australia INS Non-Contract Warranty</api>
+      <label>Australia INS Non-Contract Warranty</label>
+    </members>
+    <members>
+      <api>Australia INS PM Contract</api>
+      <label>Australia INS PM Contract</label>
+    </members>
+    <members>
+      <api>Bronze</api>
+      <label>Bronze</label>
+    </members>
+    <members>
+      <api>Gold</api>
+      <label>Gold</label>
+    </members>
+    <members>
+      <api>Hong Kong IOT</api>
+      <label>Hong Kong IOT</label>
+    </members>
+    <members>
+      <api>Indonesia INS</api>
+      <label>Indonesia INS</label>
+    </members>
+    <members>
+      <api>Indonesia INS Datacolor</api>
+      <label>Indonesia INS Datacolor</label>
+    </members>
+    <members>
+      <api>Indonesia INS Malvern</api>
+      <label>Indonesia INS Malvern</label>
+    </members>
+    <members>
+      <api>Japan INS Maintenance Plan</api>
+      <label>Japan INS Maintenance Plan</label>
+    </members>
+    <members>
+      <api>Japan INS No Contract Customer</api>
+      <label>Japan INS No Contract Customer</label>
+    </members>
+    <members>
+      <api>Korea INS No Customer Contract</api>
+      <label>Korea INS No Customer Contract</label>
+    </members>
+    <members>
+      <api>Korea INS Service Contract</api>
+      <label>Korea INS Service Contract</label>
+    </members>
+    <members>
+      <api>Korea MAC No Contract Customer</api>
+      <label>Korea MAC No Contract Customer</label>
+    </members>
+    <members>
+      <api>NZ INS Bronze</api>
+      <label>NZ INS Bronze</label>
+    </members>
+    <members>
+      <api>NZ INS Gold</api>
+      <label>NZ INS Gold</label>
+    </members>
+    <members>
+      <api>NZ INS Non-Contract</api>
+      <label>NZ INS Non-Contract</label>
+    </members>
+    <members>
+      <api>NZ INS Silver</api>
+      <label>NZ INS Silver</label>
+    </members>
+    <members>
+      <api>Platinum</api>
+      <label>Platinum</label>
+    </members>
+    <members>
+      <api>Silver</api>
+      <label>Silver</label>
+    </members>
+    <members>
+      <api>Singapore INS No Contract Customer</api>
+      <label>Singapore INS No Contract Customer</label>
+    </members>
+    <members>
+      <api>Singapore INS Platinum Plan</api>
+      <label>Singapore INS Platinum Plan</label>
+    </members>
+    <members>
+      <api>Taiwan HOS 7-11 / AJ Night</api>
+      <label>Taiwan HOS 7-11 / AJ Night</label>
+    </members>
+    <members>
+      <api>Taiwan HOS 7-11 / AJ Normal</api>
+      <label>Taiwan HOS 7-11 / AJ Normal</label>
+    </members>
+    <members>
+      <api>Taiwan HOS 7-11 / AJ Urgent</api>
+      <label>Taiwan HOS 7-11 / AJ Urgent</label>
+    </members>
+    <members>
+      <api>Taiwan HOS 7-11 / Coffee Normal</api>
+      <label>Taiwan HOS 7-11 / Coffee Normal</label>
+    </members>
+    <members>
+      <api>Taiwan HOS 7-11 / Coffee Urgent</api>
+      <label>Taiwan HOS 7-11 / Coffee Urgent</label>
+    </members>
+    <members>
+      <api>Taiwan HOS 7-11 / Taylor Machine Normal</api>
+      <label>Taiwan HOS 7-11 / Taylor Machine Normal</label>
+    </members>
+    <members>
+      <api>Taiwan HOS 7-11 / Taylor Machine Urgent</api>
+      <label>Taiwan HOS 7-11 / Taylor Machine Urgent</label>
+    </members>
+    <members>
+      <api>Taiwan HOS 7-11 / Tea Machine Normal</api>
+      <label>Taiwan HOS 7-11 / Tea Machine Normal</label>
+    </members>
+    <members>
+      <api>Taiwan HOS 7-11 / Tea Machine Urgent</api>
+      <label>Taiwan HOS 7-11 / Tea Machine Urgent</label>
+    </members>
+    <members>
+      <api>Taiwan HOS MCD Normal</api>
+      <label>Taiwan HOS MCD Normal</label>
+    </members>
+    <members>
+      <api>Taiwan HOS MCD Urgent</api>
+      <label>Taiwan HOS MCD Urgent</label>
+    </members>
+    <members>
+      <api>Taiwan HOS Regular Customer Normal</api>
+      <label>Taiwan HOS Regular Customer Normal</label>
+    </members>
+    <members>
+      <api>Taiwan HOS Regular Customer Urgent</api>
+      <label>Taiwan HOS Regular Customer Urgent</label>
+    </members>
+    <name>slaterms</name>
+  </types>
+  <types>
+    <members>
+      <api>Admin - SVMX-PS</api>
+      <label>Admin - SVMX-PS</label>
+    </members>
+    <members>
+      <api>Field Engineer - SVMX-PS</api>
+      <label>Field Engineer - SVMX-PS</label>
+    </members>
+    <members>
+      <api>Service Manager - SVMX-PS</api>
+      <label>Service Manager - SVMX-PS</label>
+    </members>
+    <name>mobileconfiguration</name>
+  </types>
+  <types>
+    <members>
+      <api>Dummy</api>
+      <label>Dummuy</label>
+    </members>
+    <members>
+      <api>SMAX PS Edit Service Pricebook</api>
+      <label>Edit Service Pricebook</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Contract_Actions-Gatekeeper</api>
+      <label>Contract Actions_Gatekeeper</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Follow_Up_Actions</api>
+      <label>Follow-Up Actions</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Inventory_Actions</api>
+      <label>Inventory Actions</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Logistics_Actions</api>
+      <label>Logistics Actions</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Parts_Request_Actions</api>
+      <label>Parts Request Actions</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Service_Quote_Actions</api>
+      <label>Service Quote Actions</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Service_Quote_Edit</api>
+      <label>Edit</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Stock_Transfer_Destination_Tech</api>
+      <label>Stock Transfer Actions Destination Tech</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Stock_Transfer_Destination_Tech (Admin)</api>
+      <label>Stock Transfer Actions (Admin)</label>
+    </members>
+    <members>
+      <api>SMAX_PS_Stocked_Serial_Actions</api>
+      <label>Stocked Serial Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Account_Management</api>
+      <label>Organization Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Account_Management_GAdmin</api>
+      <label>Organization Actions (Global Admin)</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Account_Management_Tech</api>
+      <label>Organization Actions (Technician)</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Account_Toolbox</api>
+      <label>Edit Organization</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Case_Management</api>
+      <label>Case Management - SVMX-PS</label>
+    </members>
+    <members>
+      <api>SVMX_PS_During_Work_Lead_FSE</api>
+      <label>During Work</label>
+    </members>
+    <members>
+      <api>SVMX_PS_During_Work_Non_Lead_FSE</api>
+      <label>During Work</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Available_Service</api>
+      <label>Edit Available Service</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Contact</api>
+      <label>Edit Contact</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Contract</api>
+      <label>Edit Contract</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Installed_Products</api>
+      <label>Edit Installed Products</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Location</api>
+      <label>Edit Customer Location</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Parts_Request</api>
+      <label>Edit Parts Request</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_PM_Plan</api>
+      <label>Edit PM Plan</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_PM_Template</api>
+      <label>Edit PM Template</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Proforma_Invoice</api>
+      <label>Edit Proforma Invoice</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Service_Quote</api>
+      <label>Edit Service Quote</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Service_Team</api>
+      <label>Edit Service Team</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Stock_Transfer</api>
+      <label>Edit Stock Transfer</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Stocking_Location</api>
+      <label>Edit Stocking Location</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Task_Template</api>
+      <label>Edit Task Template</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Technician</api>
+      <label>Edit Technician/Equipment</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Timesheet</api>
+      <label>Edit Timesheet</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Warranty</api>
+      <label>Edit Warranty</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Warranty_Terms</api>
+      <label>Edit Warranty Terms</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Edit_Work_Order</api>
+      <label>Edit</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Field_Service_Work_Order_Actions</api>
+      <label>Back Office Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Installed_Product_Actions</api>
+      <label>Installed Product Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Invoice Management</api>
+      <label>Invoice Management</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Location_Actions</api>
+      <label>Customer Location Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Location_Actions_w_Case</api>
+      <label>Location Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Location_Actions_without_Case</api>
+      <label>Location Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Manage_Returns</api>
+      <label>Manage Returns</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Manage_Shipments</api>
+      <label>Manage Shipments</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Parts_Request_Actions</api>
+      <label>Parts Request Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Parts_Request_Actions_Supplier</api>
+      <label>Supplier Parts Request Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_PM_Kit_Actions</api>
+      <label>PM Kit Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_PM_Offering_Actions</api>
+      <label>PM Offering Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Post_Work</api>
+      <label>Post Work</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Pre_Work</api>
+      <label>Pre Work</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Product_Stock_Actions</api>
+      <label>Product Stock Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Remote_Work_Order_Actions</api>
+      <label>Remote Work Order Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Service_Plan_Actions</api>
+      <label>Service Plan Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Service_Plan_Pricing</api>
+      <label>Edit Service Plan</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Service_Request_WO_Actions</api>
+      <label>Service Request Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Service_Team_Actions</api>
+      <label>Service Team Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Stock_Adjustment_Actions</api>
+      <label>Stock Adjustment Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Stock_Transfer_Actions</api>
+      <label>Stock Transfer Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Stock_Transfer_Actions_Originating_Tech</api>
+      <label>Stock Transfer Actions Originating Tech</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Stocking_Location_Actions</api>
+      <label>Stocking Location Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Stocking_Location_Actions_Tech</api>
+      <label>Stocking Location Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Technician_Actions</api>
+      <label>Technician/Equipment Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Warranty_Term_Actions</api>
+      <label>Warranty Term Actions</label>
+    </members>
+    <members>
+      <api>SVMX_PS_Work_Order_Toolbox</api>
+      <label>Work Order Toolbox</label>
+    </members>
+    <name>sfmwizard</name>
+  </types>
+  <types>
+    <members>
+      <api>Coffee machine counter rule</api>
+      <label>Coffee machine counter rule</label>
+    </members>
+    <name>counterrule</name>
+  </types>
+  <version>51.0</version>
+</Package>
