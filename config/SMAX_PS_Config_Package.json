@@ -1,17 +1,17 @@
 {
     "source":{
         "Type":"sandbox",
-        "Username":"deepak.andeli@servicemax.com.tec.devmax1",
-        "Password":"Melbourne@12345"
+        "Username":"deepak.andeli@servicemax.com.tec.stagmax",
+        "Password":"Melbourne@1234567890"
     },
     "target":{
-        "Type":"production",
-        "Username":"deepak.a@2098trial.com",
+        "Type":"sandbox",
+        "Username":"deepak.andeli@servicemax.com.tec.devmax1",
         "Password":"Melbourne@12345"
     },
     "migration":{
         "Type":"PACKAGE",
-        "Location":"./manifest/package.xml",
+        "Location":"./manifest/package_DKSH.xml",
         "components":[
             ["SFM Wizards"]  
         ],
@@ -21,7 +21,11 @@
         "CHECKONLY":"FALSE",
         "SPM_MODAL":"FALSE",
         "OVERWRITE":"TRUE",
-        "HEADLESS":"TRUE",
+        "HEADLESS":"FALSE",
+        "SPLITS":{
+            "SFM":"1",
+            "SFW":"1"
+        },
         "TIMEOUTS":{
             "SFLOGIN":600000,
             "VALIDATE":3600000,

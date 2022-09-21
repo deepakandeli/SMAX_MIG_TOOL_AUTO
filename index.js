@@ -22,6 +22,9 @@ async function main(configPath){
     const headLess = config.MiscSetting.HEADLESS;
     var headLessBool=false;
     migType = config.migration.Type;
+    var sfmSplits=config.MiscSetting.SPLITS.SFM;
+    console.log('sfmSplits '+sfmSplits);
+    var sfwSplits=config.MiscSetting.SPLITS.SFW;
     if(migType=='PACKAGE'){
       loc = config.migration.Location;
       var packageXML = tools.initPackage(loc);
@@ -31,15 +34,29 @@ async function main(configPath){
         console.log('types ' +types.types.length);
         var arrOfTypes = types.types;
         if(arrOfTypes.length>0){
-          for(i=0;i<arrOfTypes.length;i++){
+          var icounter=0
+          for(i=0;i<arrOfTypes.length;i++){            
             var arrOfMem = arrOfTypes[i].members;
+            var typeName=arrOfTypes[i].name;
+            console.log('typeName '+typeName);
+            console.log('arrOfMem.length '+arrOfMem.length);
             if(arrOfMem.length>0){
               var arrOfComp = [];
               for(j=0;j<arrOfMem.length;j++){
+                var jcounter=0;
                 console.log('arrOfMem['+j+'] '+arrOfMem[j].api[0]);
-                arrOfComp[j]=arrOfMem[j].api[0];
+                if(typeName=='sfmtargetmanager'){
+                  //console.log('arrOfComp.length '+arrOfComp.length);
+                  if(arrOfComp.length>= sfmSplits){
+                    listOfComp[icounter++]=arrOfComp; 
+                    arrOfComp = [];
+                    jcounter=0;
+                  }
+                }
+                arrOfComp[jcounter++]=arrOfMem[j].api[0];
               }
-              listOfComp[i]=arrOfComp;
+              listOfComp[icounter++]=arrOfComp;
+              //console.log('arrOfComp '+arrOfComp);
             }
           }
         }
