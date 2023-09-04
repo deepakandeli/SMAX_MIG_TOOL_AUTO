@@ -1,4 +1,5 @@
 const puppeteer = require('puppeteer');
+var parseString = require('xml2js').parseString;
 var jsforce = require('jsforce');
 var tools = require('./lib/SMAX_PS_Tools.js');
 var srcOrg = require('./lib/SMAX_PS_Src_Org.js');
@@ -9,9 +10,10 @@ var config;
 var browser;
 var noOfIterations=0;
 var currIndex=0;
-var listOfComp; 
+var listOfComp=[]; 
 var tarLoginURL;
 var checkOnly;
+failedComp=0;
 async function main(configPath){
   //Init Config  
     //var configJSON = tools.initConfig('./config/SMAX_PS_Config.json');
@@ -19,7 +21,50 @@ async function main(configPath){
     config= JSON.parse(configJSON);
     const headLess = config.MiscSetting.HEADLESS;
     var headLessBool=false;
-    listOfComp = config.migration.components;
+    migType = config.migration.Type;
+    var sfmSplits=config.MiscSetting.SPLITS.SFM;
+    console.log('sfmSplits '+sfmSplits);
+    var sfwSplits=config.MiscSetting.SPLITS.SFW;
+    if(migType=='PACKAGE'){
+      loc = config.migration.Location;
+      var packageXML = tools.initPackage(loc);
+      parseString(packageXML, function (err, result) {
+        var types = result['Package'];
+
+        console.log('types ' +types.types.length);
+        var arrOfTypes = types.types;
+        if(arrOfTypes.length>0){
+          var icounter=0
+          for(i=0;i<arrOfTypes.length;i++){            
+            var arrOfMem = arrOfTypes[i].members;
+            var typeName=arrOfTypes[i].name;
+            console.log('typeName '+typeName);
+            console.log('arrOfMem.length '+arrOfMem.length);
+            if(arrOfMem.length>0){
+              var arrOfComp = [];
+              for(j=0;j<arrOfMem.length;j++){
+                var jcounter=0;
+                console.log('arrOfMem['+j+'] '+arrOfMem[j].api[0]);
+                if(typeName=='sfmtargetmanager'){
+                  //console.log('arrOfComp.length '+arrOfComp.length);
+                  if(arrOfComp.length>= sfmSplits){
+                    listOfComp[icounter++]=arrOfComp; 
+                    arrOfComp = [];
+                    jcounter=0;
+                  }
+                }
+                arrOfComp[jcounter++]=arrOfMem[j].api[0];
+              }
+              listOfComp[icounter++]=arrOfComp;
+              //console.log('arrOfComp '+arrOfComp);
+            }
+          }
+        }
+    });
+    console.log('listOfComp '+listOfComp);
+    }else if(migType=='LIST'){
+      listOfComp = config.migration.components;
+    }    
     if(headLess=='TRUE'){
         headLessBool=true;
     }
@@ -62,10 +107,10 @@ async function main(configPath){
 
 async function multipleCompCallBack(err, res){
   if (err) { return console.error(err); }
-  console.log(res);
+  //console.log(res);
   if((res=='NON_QUERY_CALL') || (res.done && res.totalSize == 0)){
     currIndex=currIndex+1;
-    console.log('listOfComp.length '+listOfComp.length+' currIndex '+currIndex);
+    //console.log('listOfComp.length '+listOfComp.length+' currIndex '+currIndex);
     if(checkOnly!='TRUE'){
       if(listOfComp.length>currIndex){
         var curComp=listOfComp[currIndex];
@@ -73,6 +118,11 @@ async function multipleCompCallBack(err, res){
         console.log('Was Migration Started ? '+migrationStarted);
           if(listOfComp.length==currIndex+1){
             await browser.close();//HAL
+            //console.log('failedComp callback 1 ==> '+failedComp);
+            if(failedComp>0){
+              console.log('Found one or more component that could not be migrated \n');
+              process.exit(1);
+          }
           }else{
             if(migrationStarted){
               await tools.delay(120000);
@@ -82,6 +132,11 @@ async function multipleCompCallBack(err, res){
           }
       }else{
         await browser.close();//HAL
+        //console.log('failedComp callback 2 ==> '+failedComp);
+        if(failedComp>0){
+          console.log('Found one or more component that could not be migrated \n');
+          process.exit(1);
+        }
       }
     }
   }else{
@@ -97,6 +152,10 @@ async function initiateMigration(browser,config,curComp){
   console.log('\n*** Start processing components from Index '+currIndex);
   const context = await browser.createIncognitoBrowserContext();
   const page = await context.newPage();
+  
+  let validateTimeout = config.MiscSetting.TIMEOUTS.VALIDATE;
+  await page.setDefaultNavigationTimeout(validateTimeout);   // change timeout
+
   page.on('console', (log) => console[log._type](log._text));
 
   const url = config.migration.URL;    
@@ -146,7 +205,7 @@ async function initiateMigration(browser,config,curComp){
     await validateButton.click();
   
     //console.log('Before Wait Response Validate');
-    let validateTimeout = config.MiscSetting.TIMEOUTS.VALIDATE;
+
   
     try{
       const validationResponse = await page.waitForResponse(
@@ -164,19 +223,19 @@ async function initiateMigration(browser,config,curComp){
       await tools.delay(10000);
       //console.log('After  Delay');
       const deploySelection = page;
-      await deploySelection.$('#validateUI[style*="visibility: visible"]',{timeout: 120000});
+      await deploySelection.$('#validateUI[style*="visibility: visible"]');
       //console.log('After  deploySelection');
     
       var toOverwrite = config.MiscSetting.OVERWRITE;
       if(toOverwrite=='TRUE'){
         //Over write
-        const selectAllOverwrite = await deploySelection.$('#selectAll',{timeout: 120000});
+        const selectAllOverwrite = await deploySelection.$('#selectAll');
         //console.log('After  selectAllOverwrite');
         await selectAllOverwrite.evaluate((e) => e.click());  
         //console.log('After  selectAllOverwrite Click');
   
         //profileSelectAllContainer
-        const selectAllCProfile = await deploySelection.$('#profileSelectAllContainer > input',{timeout: 120000});
+        const selectAllCProfile = await deploySelection.$('#profileSelectAllContainer > input');
         if(selectAllCProfile!=null){
           await selectAllCProfile.evaluate((e) => e.click());
           //console.log('After  selectAllCProfile Click');
@@ -198,18 +257,27 @@ async function initiateMigration(browser,config,curComp){
           }
         },{profileSel});
         console.log('Profile Selection - End');
+      }
   
-        //Expand validation result tree
-        let validTree='tr.whiteBg>td[style="width:82%"]>a';
-        const validTreeFrame = page;
-        await validTreeFrame.evaluate(({validTree}) => {
-          let anchorList = document.querySelectorAll(validTree);
-          var arrayLength = anchorList.length;
-          for(var i = 0; i < arrayLength; i++){
-            anchorList[i].click();
-          }
-        },{validTree});
-        debugger;
+      //Expand validation result tree
+      let validTree='tr.whiteBg>td[style="width:82%"]>a';
+      const validTreeFrame = page;
+
+      await page.exposeFunction("addFailedComp", function(curComp) {
+        //failedComp.push(curComp);
+        failedComp=failedComp+1;
+      });
+
+
+
+      await validTreeFrame.evaluate(({validTree}) => {
+        let anchorList = document.querySelectorAll(validTree);
+        var arrayLength = anchorList.length;
+        for(var i = 0; i < arrayLength; i++){
+          anchorList[i].click();
+        }
+      },{validTree});
+      debugger;
         
         //let validComps='tr.whiteBg > td';
         let validComps='tr.whiteBg';
@@ -235,15 +303,21 @@ async function initiateMigration(browser,config,curComp){
               }
             }
             if(curCompStatusStr!=''){
-              console.log('-----> '+curCompStatusStr);
+              console.log('--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------');
+              console.log(curCompStatusStr);
+              console.log('--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------');
+              //This item will not be migrated
+              if(curCompStatusStr.includes('This item will not be migrated')){
+                addFailedComp(curCompStatusStr);
+              }              
             }          
           }
         },{validComps});
         console.log('Validation Result - End ');
-      }
+
       
         
-      const migrateButton = await deploySelection.waitForSelector('#deployData',{timeout: 120000});
+      const migrateButton = await deploySelection.waitForSelector('#deployData');
       //console.log('After  migrateButton');
       await migrateButton.evaluate((e) => e.click());//HAL
       migrationStarted=true;
@@ -264,9 +338,10 @@ async function initiateMigration(browser,config,curComp){
     }
   }catch(err){
     console.log(err);
-    var pathLoc = 'error_'+Date.now()+'_'+curComp+'.png';
-    await page.screenshot({ path: pathLoc});
+    var pathLoc = 'error_'+Date.now()+'.png';
+    await page.screenshot({ path: pathLoc,fullPage: true});
     await context.close();//HAL
+    failedComp=failedComp+1;
   }
   return migrationStarted;  
 }

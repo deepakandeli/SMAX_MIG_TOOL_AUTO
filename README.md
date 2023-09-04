@@ -75,3 +75,10 @@ node MigToolTest.js "config/SMAX_PS_Config.json" |tee log.txt
 - 1.10 Fixes related to expanding the validation screen
 - 1.11 Fixes the "No component selected for deployment" scenario
 - 1.12 Added Try-Catch block to progress if one of the iteration fails instead of terminating the job
+- 1.13 Displaying Validation result screen
+- 1.14 Moved Override flag logic to limit it to Override selection and Profile selection
+- 1.15 Calling out if there was any component that was not deployed
+- 1.16 Exit process.exit(1);
+- 1.17 Added Global Variable to check if any component failed
+- 1.18 Seperate Timeouts for Validation, Login and Global
+- 1.19 Added Package.xml support, now config file or package.xml can be used identify the deployable components
