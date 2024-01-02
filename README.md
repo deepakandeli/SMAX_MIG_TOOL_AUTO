@@ -1,7 +1,7 @@
 <centre>
 <table border='0px'>
     <tr>
-        <td>To Support our work</td>
+        <td>To Support this work</td>
         <td><a href="https://www.buymeacoffee.com/Lifeonauto" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a></td>
     </tr>
 </table>
