@@ -13,7 +13,7 @@
 ```bash
 npm i smax_mig_tool_auto
 ```
-## 2. Create a config file with the source and target details
+## 2a. Create a config file with the source and target details with migration type = LIST
 ### Example Config file
 #### SMAX_PS_Config.json
 ```json
@@ -29,24 +29,70 @@ npm i smax_mig_tool_auto
         "Password":"Target_Password"
     },
     "migration":{
-        "components":[["test"]                        
+        "Type":"LIST",
+        "components":[
+            ["SFM Wizards"]  
+        ],
+        "URL":"https://migrate.servicemax.com/MigrationTool/"
+    },
+    "MiscSetting":{
+        "CHECKONLY":"TRUE",
+        "SPM_MODAL":"FALSE",
+        "OVERWRITE":"TRUE",
+        "HEADLESS":"TRUE",
+        "TIMEOUTS":{
+            "SFLOGIN":600000,
+            "VALIDATE":3600000,
+            "GLOBAL":3600000           
+        }
+    }
+}
+```
+## 2b. Create a config file with the source and target details with migration type = PACKAGE
+### Example Config file
+#### SMAX_PS_Config.json
+```json
+{
+    "source":{
+        "Type":"sandbox",
+        "Username":"Source_Username",
+        "Password":"Source_Password"
+    },
+    "target":{
+        "Type":"production",
+        "Username":"Target_Username",
+        "Password":"Target_Password"
+    },
+    "migration":{
+        "Type":"PACKAGE",
+        "Location":"./manifest/package_DKSH.xml",
+        "components":[
+            ["SFM Wizards"]  
         ],
         "URL":"https://migrate.servicemax.com/MigrationTool/"
     },
     "MiscSetting":{
         "CHECKONLY":"FALSE",
         "SPM_MODAL":"FALSE",
-        "OVERWRITE":"FALSE",
-        "HEADLESS":"TRUE",
+        "OVERWRITE":"TRUE",
+        "HEADLESS":"FALSE",
+        "SPLITS":{
+            "SFM":"1",
+            "SFW":"1"
+        },
         "TIMEOUTS":{
-            "VALIDATE":600000
+            "SFLOGIN":600000,
+            "VALIDATE":3600000,
+            "GLOBAL":3600000           
         }
     }
 }
 ```
 Mention the Org Type, Username and Password for Source and Target Org
-Also mention the components that needs to be migrated. 
-At the moment this feature only supports smaller volume of migration, so please do not include entire folders such as SFM Wizard, SFM Search etc
+If one has package.xml from Watchman, set  the migration type attribute as 'PACKAGE' and set the relative path of the package.xml file
+If one has no package.xml from Watchman, set the migration type attribute as 'LIST' and set the list of component into a 2D array
+Note: At the moment this feature only supports smaller volume of migration, so please do not include entire folders such as SFM Wizard, SFM Search etc
+
 ## 3. Create a Javascript program that includes the package and invoke the Main function as shown in the below example
 
 ### Package Usage - Example 
